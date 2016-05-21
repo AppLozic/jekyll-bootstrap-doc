@@ -67,15 +67,15 @@
 
   <!-- Header
   =========================================== -->
-  {% if page.isHome %}
+  {% if page.showDownload %}
   <div class="bs-docs-masthead" id="content">
     <div class="container">
-      <h1 class="home-title">{{site.name}}</h1>
+      <h1 class="home-title">{{page.title}}</h1>
       <p class="lead">{{page.description}}</p>
       <p class="lead">
-        <a href="{{site.downloadUrl}}" class="btn btn-outline-inverse btn-lg">Download</a>
+        <a href="{{page.downloadUrl}}" class="btn btn-outline-inverse btn-lg">Download</a>
       </p>
-      <p class="version">Currently v{{site.version}}</p>
+      <p class="version">Currently v{{page.version}}</p>
     </div>
   </div>
 
@@ -117,12 +117,17 @@
     <div class="container">
       <div class="bs-docs-social">
         <ul class="bs-docs-social-buttons">
-        {% if site.githubButton.user and site.githubButton.repo %}
+         {% if page.isHome and site.githubButton.user and site.githubButton.repo %}
           <li>
-            <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user={{site.githubButton.user}}&amp;repo={{site.githubButton.repo}}&amp;type=watch&amp;count=true" width="90" height="20" title="Star on GitHub"></iframe>
+            <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user={{site.githubButton.user}}&amp;repo={{page.githubButton.repo}}&amp;type=watch&amp;count=true" width="90" height="20" title="Star on GitHub"></iframe>
+          </li>
+        {% endif %}
+        {% if site.githubButton.user and page.github %}
+          <li>
+            <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user={{site.githubButton.user}}&amp;repo={{page.github}}&amp;type=watch&amp;count=true" width="90" height="20" title="Star on GitHub"></iframe>
           </li>
           <li>
-            <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user={{site.githubButton.user}}&amp;repo={{site.githubButton.repo}}&amp;type=fork&amp;count=true" width="90" height="20" title="Fork on GitHub"></iframe>
+            <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user={{site.githubButton.user}}&amp;repo={{page.github}}&amp;type=fork&amp;count=true" width="90" height="20" title="Fork on GitHub"></iframe>
           </li>
         {% endif %}
         {% if site.twitter.enabled %}
