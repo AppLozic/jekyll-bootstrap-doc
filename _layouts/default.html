@@ -95,10 +95,15 @@
       =========================================== -->
       <div class="col-md-9" role="main">
 
+
+
       	<section class="bs-docs-section">
 		  <h1 id="first-level" class="page-header">Overview</h1>
 		  <p>{{page.overview}}</p>
 		</section>
+
+		{% if page.isHome == false %}
+
 
         <!-- wrap each main section with "bs-docs-section" class -->
 		<section class="bs-docs-section">
@@ -109,13 +114,45 @@
 		  <p>Already Registered? <a href="https://www.applozic.com/admin/dashboard.html" target="_blank">Get Application Key</a></p>
 		</section>
 
+		{% endif %}
+
         {{content}}
 
-        <section class="bs-docs-section">
-			  <h1 id="overview" class="page-header">Integration</h1>
 
+        {% if page.isHome == false %}
+
+
+        <section class="bs-docs-section">
+			 <h1 id="overview" class="page-header">Start Integration</h1>
 			<div id="readme"></div>
 		</section>
+
+		 <section class="bs-docs-section">
+			 <h1 id="feature-requests" class="page-header">Feature Requests</h1>
+			 <p>File feature requests, issues or bug reporting in <a href="{{page.downloadUrl}}/issues" target="_blank" class="btn btn-outline btn-lg">Github issues</a></p>
+
+		</section>
+
+		<section class="bs-docs-section">
+			 <h1 id="demo" class="page-header">Schedule Demo</h1>
+			 <p>To schedule a demo visit https://calendly.com/devashish-applozic or contact us at growth@applozic.com</p>
+		</section>
+
+		 <section class="bs-docs-section">
+			 <h1 id="chat" class="page-header">Chat with Applozic</h1>
+			 <p>Chat with Applozic team for quick integration help.</p>
+			 <p><a id="chat-help" href="#" class="btn btn-outline btn-lg">Chat</a></p>
+		</section>
+
+		 <section class="bs-docs-section">
+			 <h1 id="contact" class="page-header">Contact</h1>
+			 <p>Couldn't find what you are looking for? No worries, send us a mail at contact@applozic.com and we will get back to you.</p>
+			 <p><a href="https://www.applozic.com/contact.html" target="_blank">Contact Us</a></p>
+		</section>
+
+				{% endif %}
+
+
 
         <!---
         <section class="bs-docs-section">
@@ -212,14 +249,81 @@
 
 	<script src="jquery-gh/jquery.gh-readme.min.js"></script>
 
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+
 	<script>
+
+	var userId, displayName = "";
+	var loggedIn = false;
+	var firstTimeUser = false;
+	var welcomeMessage = "Welcome to Applozic, may I know your name and company name?";
+
+
     $(function () {
         var options = {
             owner: '{{site.githubButton.user}}',
             repo: '{{page.github}}'
         };
         $('#readme').readme(options);
-    });
+
+        $('[data-spy="scroll"]').each(function () {
+			var $spy = $(this).scrollspy('refresh');
+		});
+
+		if ($.cookie("mckUserId")) {
+            userId = $.cookie("mckUserId");
+        } else {
+            userId = getRandomId();
+            firstTimeUser = true;
+            $.cookie("mckUserId", userId);
+         }
+
+		$(document).on('click', "#chat-help", function(e) {
+			e.preventDefault();
+			initChat(userId, displayName);
+		});
+
+   });
+
+   function initChat(userId, displayName) {
+   		if (loggedIn) {
+			$applozic.fn.applozic('loadTab', 'applozic');
+			return;
+		}
+		console.log("initializing plugin");
+		 (function(d, m){var s, h;       
+			   s = document.createElement("script");
+			   s.type = "text/javascript";
+			   s.async=true;
+			   s.src="https://apps.applozic.com/sidebox.app";
+			   h=document.getElementsByTagName('head')[0];
+			   h.appendChild(s);
+			   window.applozic=m;
+			   m.init=function(t){m._globals=t;}})(document, window.applozic || {});
+
+		window.applozic.init({appId: 'applozic-sample-app', userId: userId, userName: displayName, 
+			desktopNotification: true,  notificationIconLink: 'https://www.applozic.com/favicon.ico', 
+			onInit: function(response) { console.log("response completed");
+					loggedIn = true;
+					 if (firstTimeUser) {
+                            $applozic.fn.applozic('addMessageToInbox', {'sender': 'applozic', 'messageContent' : welcomeMessage});
+                        }
+					if (response == "success") {
+						$applozic.fn.applozic('loadTab', 'applozic');
+					} 
+				}
+			});
+	}
+
+	function getRandomId() {
+                var text = "";
+                var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+                for (var i = 0; i < 10; i++)
+                    text += possible.charAt(Math.floor(Math.random() * possible.length));
+                return text;
+            }
+
 </script>
  <!-- Applozic scripts
   =========================================== -->
