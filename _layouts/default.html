@@ -14,6 +14,7 @@
   <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
   <link href="{{site.github.url}}/assets/css/docs.min.css" rel="stylesheet">
   <link href="{{site.github.url}}/assets/css/style.css" rel="stylesheet">
+  <link href="{{site.github.url}}/assets/css/applozic.css" rel="stylesheet">
 
   <style>
     #content {
@@ -68,12 +69,12 @@
   <!-- Header
   =========================================== -->
   {% if page.showDownload %}
-  <div class="bs-docs-masthead" id="content">
+  <div class="bs-docs-masthead bs-docs-masthead-main" id="content">
     <div class="container">
-      <h1 class="home-title">{{page.title}}</h1>
+      <h1 class="home-title">{{page.heading}}</h1>
       <p class="lead">{{page.description}}</p>
       <p class="lead">
-        <a href="{{page.downloadUrl}}" class="btn btn-outline-inverse btn-lg">Download</a>
+        <a href="{{page.downloadUrl}}" class="btn btn-outline-inverse btn-lg">Github</a>
       </p>
       <p class="version">Currently v{{page.version}}</p>
     </div>
@@ -93,7 +94,32 @@
       <!-- Content
       =========================================== -->
       <div class="col-md-9" role="main">
+
+      	<section class="bs-docs-section">
+		  <h1 id="first-level" class="page-header">Overview</h1>
+		  <p>{{page.overview}}</p>
+		</section>
+
+        <!-- wrap each main section with "bs-docs-section" class -->
+		<section class="bs-docs-section">
+		  <!-- each section must contain ONE h1 with an id and optionally a "page-header" class -->
+		  <h1 id="first-level" class="page-header">Application Key</h1>
+		  <p>Application Key is a unique identifier provided by Applozic for each application.</p>
+		  <p>New user? <a href="https://www.applozic.com/signup.html">Claim Application Key</a></p>
+		  <p>Already Registered? <a href="https://www.applozic.com/admin/dashboard.html">Get Application Key</a></p>
+		</section>
+
         {{content}}
+
+        <!---
+        <section class="bs-docs-section">
+		  <h1 id="first-level" class="page-header">Contact Us</h1>
+		  <h3 id="another-sub-section">Couldn't find what you are looking for?</h3>
+		  <p>Contact us: contact@applozic.com</p>
+		  <p><a href="https://www.applozic.com/contact.html">Contact Us</a></p>
+		</section>
+		-->
+
       </div>
 
       <!-- Page navigation
@@ -158,8 +184,8 @@
         documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
       </p>
       <p>
-        Documentation template by <a href="http://getbootstrap.com">Bootstrap team</a>,
-        generated with <a href="https://github.com/mistic100/jekyll-bootstrap-doc">Jekyll Bootstrap Doc</a>
+        Documentation template by <a href="https://www.applozic.com">Applozic team</a>,
+        generated with <a href="https://github.com/AppLozic/jekyll-bootstrap-doc">Jekyll Bootstrap Doc</a>
       </p>
 
       <ul class="bs-docs-footer-links muted">
@@ -171,6 +197,15 @@
       </ul>
     </div>
   </footer>
+
+
+   <!-- Applozic scripts
+  =========================================== -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+	<script src="jquery-gh/jquery.gh-readme.min.js"></script>
+ <!-- Applozic scripts
+  =========================================== -->
 
 
   <!-- Async scripts
