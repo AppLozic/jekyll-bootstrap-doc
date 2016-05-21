@@ -189,10 +189,11 @@
       </p>
 
       <ul class="bs-docs-footer-links muted">
-        <li>Currently v{{site.version}}</li>
-      {% for l in site.footerLinks %}
+
+      <li>Currently v{{page.version}}</li>
+      {% for p in page.footerLinks %}
         <li>&middot;</li>
-        <li><a href="{{l.url}}">{{l.title}}</a></li>
+        <li><a href="{{p.url}}">{{p.title}}</a></li>
       {% endfor %}
       </ul>
     </div>
