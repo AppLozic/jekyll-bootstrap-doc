@@ -106,10 +106,16 @@
 		  <h1 id="first-level" class="page-header">Application Key</h1>
 		  <p>Application Key is a unique identifier provided by Applozic for each application.</p>
 		  <p>New user? <a href="https://www.applozic.com/signup.html">Claim Application Key</a></p>
-		  <p>Already Registered? <a href="https://www.applozic.com/admin/dashboard.html">Get Application Key</a></p>
+		  <p>Already Registered? <a href="https://www.applozic.com/admin/dashboard.html" target="_blank">Get Application Key</a></p>
 		</section>
 
         {{content}}
+
+        <section class="bs-docs-section">
+			  <h1 id="overview" class="page-header">Integration</h1>
+
+			<div id="readme"></div>
+		</section>
 
         <!---
         <section class="bs-docs-section">
@@ -205,6 +211,16 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 
 	<script src="jquery-gh/jquery.gh-readme.min.js"></script>
+
+	<script>
+    $(function () {
+        var options = {
+            owner: '{{site.githubButton.user}}',
+            repo: '{{page.github}}'
+        };
+        $('#readme').readme(options);
+    });
+</script>
  <!-- Applozic scripts
   =========================================== -->
 
