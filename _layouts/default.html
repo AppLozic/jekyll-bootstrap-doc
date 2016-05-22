@@ -85,7 +85,9 @@
     <div class="container">
       <h1>{{page.title}}</h1>
       <p>{{page.description}}</p>
+       {% if page.isHome == false %}
       <p class="version">Currently v{{page.version}}</p>
+       {% endif %}
     </div>
   </div>
   {% endif %}
@@ -279,7 +281,9 @@
             userId = getRandomId();
             firstTimeUser = true;
             $.cookie("mckUserId", userId);
-         }
+        }
+
+        initChat(userId, displayName);
 
 		$(document).on('click', "#chat-help", function(e) {
 			e.preventDefault();
@@ -293,7 +297,6 @@
 			$applozic.fn.applozic('loadTab', 'applozic');
 			return;
 		}
-		console.log("initializing plugin");
 		 (function(d, m){var s, h;       
 			   s = document.createElement("script");
 			   s.type = "text/javascript";
@@ -317,7 +320,7 @@
                             $applozic.fn.applozic('addMessageToInbox', {'sender': 'applozic', 'messageContent' : welcomeMessage});
                         }
 					if (response == "success") {
-						$applozic.fn.applozic('loadTab', 'applozic');
+						//$applozic.fn.applozic('loadTab', 'applozic');
 					} 
 				}
 			});
