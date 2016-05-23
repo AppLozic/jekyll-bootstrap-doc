@@ -124,27 +124,36 @@
 
         <section class="bs-docs-section">
 			 <h1 id="overview" class="page-header">Start Integration</h1>
-			<div id="readme"></div>
+			<div id="integration-doc"></div>
 		</section>
 
+		<!---
+		<section class="bs-docs-section">
+			 <h1 id="overview" class="page-header">Customization</h1>
+			<div id="customization-doc"></div>
+		</section>
+		-->
+
 		 <section class="bs-docs-section">
+			 <h1 id="chat" class="page-header">Integration Help</h1>
+			 <p>We provide quick support at <a href="http://stackoverflow.com/questions/tagged/applozic" target="_blank">StackOverflow</a> when you tag using applozic.
+			 <p>You can also reach out to us at help@applozic.com</p>
+			 <p>For immediate help, Chat with Applozic team.</p>
+			 <p><a id="chat-help" href="#" class="btn btn-md btn-outline">Chat</a></p>
+		</section>
+
+		<section class="bs-docs-section">
 			 <h1 id="feature-requests" class="page-header">Feature Requests</h1>
 			 <p>File feature requests, issues or bug reporting in Github</p>
-			 <p><a href="{{page.downloadUrl}}/issues" target="_blank" class="btn btn-sm btn-outline">File issue</a></p>
-
+			 <p><a href="{{page.downloadUrl}}/issues" target="_blank" class="btn btn-md btn-outline">File issue</a></p>
 		</section>
 
 		<section class="bs-docs-section">
 			 <h1 id="demo" class="page-header">Schedule Demo</h1>
-			 <p>To schedule a demo visit https://calendly.com/devashish-applozic or contact us at growth@applozic.com</p>
+			 <p>To schedule a demo write to us at growth@applozic.com or click the below button.</p>
+			 <p><a href="https://calendly.com/devashish-applozic" target="_blank" class="btn btn-md btn-outline">Schedule Demo</a></p>
 		</section>
 
-		 <section class="bs-docs-section">
-			 <h1 id="chat" class="page-header">Integration Help</h1>
-			 <p>You can also reach out to us at help@applozic.com</p>
-			 <p>For immediate help, Chat with Applozic team.</p>
-			 <p><a id="chat-help" href="#" class="btn btn-outline btn-md">Chat</a></p>
-		</section>
 
 		 <section class="bs-docs-section">
 			 <h1 id="contact" class="page-header">Contact Us</h1>
@@ -152,7 +161,7 @@
 			 <p><a href="https://www.applozic.com/contact.html" target="_blank">Contact Us</a></p>
 		</section>
 
-				{% endif %}
+		{% endif %}
 
 
 
@@ -249,7 +258,7 @@
   =========================================== -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 
-	<script src="jquery-gh/jquery.gh-readme.min.js"></script>
+	<script src="jquery-gh/jquery.gh-readme.js"></script>
 
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
@@ -265,9 +274,10 @@
     $(function () {
         var options = {
             owner: '{{site.githubButton.user}}',
-            repo: '{{page.github}}'
+            repo: '{{page.github}}',
+            path: 'INTEGRATION-DOC.md'
         };
-        $('#readme').readme(options);
+        $('#integration-doc').readme(options);
 
         $('[data-spy="scroll"]').each(function () {
 			var $spy = $(this).scrollspy('refresh');
