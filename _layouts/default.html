@@ -277,7 +277,10 @@
             repo: '{{page.github}}',
             path: 'INTEGRATION-DOC.md'
         };
-        $('#integration-doc').readme(options);
+
+        if ($('#integration-doc').length > 0) {
+			$('#integration-doc').readme(options);
+		}
 
         $('[data-spy="scroll"]').each(function () {
 			var $spy = $(this).scrollspy('refresh');
