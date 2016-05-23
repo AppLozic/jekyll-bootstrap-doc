@@ -13,6 +13,9 @@ headerLinks:
   - title: Applozic
     url: https://www.applozic.com
 
+github:
+    url: /docs
+
 # list if additional links on the footer
 #footerLinks:
 #  - title: GitHub
