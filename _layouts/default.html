@@ -282,6 +282,16 @@
 			$('#integration-doc').readme(options);
 		}
 
+		options = {
+            owner: '{{site.githubButton.user}}',
+            repo: '{{page.github}}',
+            path: 'CUSTOMIZATION-DOC.md'
+        };
+
+        if ($('#customization-doc').length > 0) {
+			$('#customization-doc').readme(options);
+		}
+
         $('[data-spy="scroll"]').each(function () {
 			var $spy = $(this).scrollspy('refresh');
 		});
