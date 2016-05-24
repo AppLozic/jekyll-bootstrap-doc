@@ -121,21 +121,25 @@
 
         {% if page.isHome == false %}
 
+                {% if page.isApi != true %}
 
-        <section class="bs-docs-section">
-			 <h1 id="overview" class="page-header">Getting Started</h1>
-			<div id="integration-doc"></div>
-		</section>
+			        <section class="bs-docs-section">
+						 <h1 id="overview" class="page-header">Getting Started</h1>
+						<div id="integration-doc"></div>
+					</section>
 
-		<section class="bs-docs-section">
-			 <h1 id="customization" class="page-header">UI Customization</h1>
-			<div id="customization-doc"></div>
-		</section>
+					<section class="bs-docs-section">
+						 <h1 id="customization" class="page-header">UI Customization</h1>
+						<div id="customization-doc"></div>
+					</section>
 
-		<section class="bs-docs-section">
-			 <h1 id="advanced" class="page-header">Advanced</h1>
-			<div id="advanced-doc"></div>
-		</section>
+					<section class="bs-docs-section">
+						 <h1 id="advanced" class="page-header">Advanced</h1>
+						<div id="advanced-doc"></div>
+					</section>
+
+				{% endif %}
+
 
 		<!---
 		<section class="bs-docs-section">
@@ -163,8 +167,7 @@
 			 <p>To schedule a demo write to us at growth@applozic.com or click the below button.</p>
 			 <p><a href="https://calendly.com/devashish-applozic" target="_blank" class="btn btn-md btn-outline">Schedule Demo</a></p>
 		</section>
-
-
+	
 		 <section class="bs-docs-section">
 			 <h1 id="contact" class="page-header">Contact</h1>
 			 <p>Couldn't find what you are looking for? No worries, send us a mail at contact@applozic.com and we will get back to you.</p>
@@ -172,17 +175,6 @@
 		</section>
 
 		{% endif %}
-
-
-
-        <!---
-        <section class="bs-docs-section">
-		  <h1 id="first-level" class="page-header">Contact Us</h1>
-		  <h3 id="another-sub-section">Couldn't find what you are looking for?</h3>
-		  <p>Contact us: contact@applozic.com</p>
-		  <p><a href="https://www.applozic.com/contact.html">Contact Us</a></p>
-		</section>
-		-->
 
       </div>
 
@@ -297,6 +289,7 @@
         loadDoc("customization-doc", "CUSTOMIZATION-DOC.md");
 		loadDoc("advanced-doc", "ADVANCED-DOC.md");
     	//loadDoc("sample-code", "SAMPLE-CODE-DOC.md");
+    	loadDoc("platform-doc", "PLATFORM-DOC.md");
 
         $('[data-spy="scroll"]').each(function () {
 			var $spy = $(this).scrollspy('refresh');
