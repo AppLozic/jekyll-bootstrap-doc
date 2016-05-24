@@ -245,8 +245,9 @@
       </p>
 
       <ul class="bs-docs-footer-links muted">
-
+      {% if page.showDownload %}
       <li>Currently v{{page.version}}</li>
+      {% endif %}
       {% for p in page.footerLinks %}
         <li>&middot;</li>
         <li><a href="{{p.url}}">{{p.title}}</a></li>
