@@ -127,10 +127,20 @@
 			<div id="integration-doc"></div>
 		</section>
 
+		<section class="bs-docs-section">
+			 <h1 id="customization" class="page-header">UI Customization</h1>
+			<div id="customization-doc"></div>
+		</section>
+
+		<section class="bs-docs-section">
+			 <h1 id="advanced" class="page-header">Advanced</h1>
+			<div id="advanced-doc"></div>
+		</section>
+
 		<!---
 		<section class="bs-docs-section">
-			 <h1 id="overview" class="page-header">Customization</h1>
-			<div id="customization-doc"></div>
+			 <h1 id="sample" class="page-header">Sample Code</h1>
+			<div id="sample-doc"></div>
 		</section>
 		-->
 
@@ -270,27 +280,23 @@
 	var firstTimeUser = false;
 	var welcomeMessage = "Welcome to Applozic, may I know your name and company name?";
 
+	function loadDoc(elemId, docPath) {
+	 var options = {
+	    	owner: '{{site.githubButton.user}}',
+            repo: '{{page.github}}',
+            path: docPath
+        };
+
+        if ($('#' + elemId).length > 0) {
+			$('#' + elemId).readme(options);
+		}
+	}
 
     $(function () {
-        var options = {
-            owner: '{{site.githubButton.user}}',
-            repo: '{{page.github}}',
-            path: 'INTEGRATION-DOC.md'
-        };
-
-        if ($('#integration-doc').length > 0) {
-			$('#integration-doc').readme(options);
-		}
-
-		options = {
-            owner: '{{site.githubButton.user}}',
-            repo: '{{page.github}}',
-            path: 'CUSTOMIZATION-DOC.md'
-        };
-
-        if ($('#customization-doc').length > 0) {
-			$('#customization-doc').readme(options);
-		}
+        loadDoc("integration-doc", "INTEGRATION-DOC.md");
+        loadDoc("customization-doc", "CUSTOMIZATION-DOC.md");
+		loadDoc("advanced-doc", "ADVANCED-DOC.md");
+    	//loadDoc("sample-code", "SAMPLE-CODE-DOC.md");
 
         $('[data-spy="scroll"]').each(function () {
 			var $spy = $(this).scrollspy('refresh');
