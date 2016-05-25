@@ -274,15 +274,17 @@
 	var welcomeMessage = "Welcome to Applozic, may I know your name and company name?";
 
 	function loadDoc(elemId, docPath) {
-	 var options = {
-	    	owner: '{{site.githubButton.user}}',
-            repo: '{{page.github}}',
-            path: docPath
-        };
-
-        if ($('#' + elemId).length > 0) {
-			$('#' + elemId).readme(options);
+		if ($('#' + elemId).length < 1) {
+			return;
 		}
+		var options = {
+		    	owner: '{{site.githubButton.user}}',
+	            repo: '{{page.github}}',
+	            path: docPath
+	        };
+
+		$('#' + elemId).readme(options);
+		
 	}
 
     $(function () {
@@ -291,6 +293,8 @@
 		loadDoc("advanced-doc", "ADVANCED-DOC.md");
     	//loadDoc("sample-code", "SAMPLE-CODE-DOC.md");
     	loadDoc("platform-doc", "PLATFORM-DOC.md");
+    	loadDoc("configuration-doc", "CONFIGURATION-DOC.md");
+
 
         $('[data-spy="scroll"]').each(function () {
 			var $spy = $(this).scrollspy('refresh');
