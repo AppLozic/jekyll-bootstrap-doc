@@ -29,7 +29,7 @@
   <script src="{{site.github.url}}/assets/js/docs.min.js"></script>
 </head>
 
-<body>
+<body >
   <!-- Main navigation
   =========================================== -->
   <header class="navbar navbar-static-top bs-docs-nav" id="top">
@@ -299,11 +299,6 @@
     	loadDoc("platform-doc", "PLATFORM-DOC.md");
     	loadDoc("configuration-doc", "CONFIGURATION-DOC.md");
 
-
-        $('[data-spy="scroll"]').each(function () {
-			var $spy = $(this).scrollspy('refresh');
-		});
-
 		if ($.cookie("mckUserId")) {
             userId = $.cookie("mckUserId");
         } else {
@@ -319,6 +314,9 @@
 			initChat(userId, displayName);
 		});
 
+		 /*$('[data-spy="scroll"]').each(function () {
+			var $spy = $(this).scrollspy('refresh');
+		});*/
    });
 
    function initChat(userId, displayName) {
