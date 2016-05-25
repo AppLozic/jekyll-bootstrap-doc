@@ -8,3 +8,22 @@
 	padding-top: 35px;
     padding-bottom: 35px;
 }
+
+
+.h1, .h2, .h3, h1, h2, h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+pre {
+	margin-bottom: 15px;
+}
+
+strong {
+	margin-top: 10px;
+}
