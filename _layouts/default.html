@@ -201,15 +201,15 @@
         <ul class="bs-docs-social-buttons">
          {% if page.isHome and site.githubButton.user and site.githubButton.repo %}
           <li>
-            <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user={{site.githubButton.user}}&amp;repo={{page.githubButton.repo}}&amp;type=watch&amp;count=true" width="90" height="20" title="Star on GitHub"></iframe>
+            <iframe class="github-btn" src="https://ghbtns.com/github-btn.html?user={{site.githubButton.user}}&amp;repo={{page.githubButton.repo}}&amp;type=watch&amp;count=true" width="90" height="20" title="Star on GitHub"></iframe>
           </li>
         {% endif %}
         {% if site.githubButton.user and page.github %}
           <li>
-            <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user={{site.githubButton.user}}&amp;repo={{page.github}}&amp;type=watch&amp;count=true" width="90" height="20" title="Star on GitHub"></iframe>
+            <iframe class="github-btn" src="https://ghbtns.com/github-btn.html?user={{site.githubButton.user}}&amp;repo={{page.github}}&amp;type=watch&amp;count=true" width="90" height="20" title="Star on GitHub"></iframe>
           </li>
           <li>
-            <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user={{site.githubButton.user}}&amp;repo={{page.github}}&amp;type=fork&amp;count=true" width="90" height="20" title="Fork on GitHub"></iframe>
+            <iframe class="github-btn" src="https://ghbtns.com/github-btn.html?user={{site.githubButton.user}}&amp;repo={{page.github}}&amp;type=fork&amp;count=true" width="90" height="20" title="Fork on GitHub"></iframe>
           </li>
         {% endif %}
         {% if site.twitter.enabled %}
@@ -341,7 +341,7 @@
 					return "Applozic Help";
 				} 
 			},
-			onInit: function(response) { console.log("response completed");
+			onInit: function(response) {
 					loggedIn = true;
 					 if (firstTimeUser) {
                             $applozic.fn.applozic('addMessageToInbox', {'sender': 'applozic', 'messageContent' : welcomeMessage});
