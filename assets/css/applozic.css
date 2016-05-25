@@ -27,3 +27,45 @@ pre {
 strong {
 	margin-top: 10px;
 }
+pre {
+position:relative;
+padding:30px;
+}
+
+.copy-button {
+   cursor: pointer;
+   border-image-source: initial;
+   border-image-slice: initial;
+   border-image-width: initial;
+   border-image-outset: initial;
+   border-image-repeat: initial;
+   font-size: 10px;
+   text-transform: uppercase;
+   font-weight: 500;
+   color: rgb(121, 85, 72);
+   background-color: transparent;
+   position: absolute;
+   top: 0px;
+   right: 0px;
+   border-width: 0px;
+   border-style: initial;
+   border-color: initial;
+   padding: 6px 10px 10px;
+}
+.copy-button:hover,.copy-button:focus, .copy-button:active {
+   outline: 0;
+   background-color: #eee9e6;
+}
+
+.copy-button::before {
+   content: "";
+   display: inline-block;
+   width: 16px;
+   height: 16px;
+   margin-right: 3px;
+   background-size: contain;
+   background-image:url("../images/clipboard.svg");
+   position: relative;
+   top: 3px;
+   background-repeat: no-repeat;
+}
