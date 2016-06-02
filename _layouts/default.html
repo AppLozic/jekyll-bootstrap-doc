@@ -27,6 +27,7 @@
   <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.3.0/bootbox.min.js"></script>
   <script src="{{site.github.url}}/assets/js/docs.min.js"></script>
+  <script src="{{site.github.url}}/assets/js/anchor.min.js"></script>
 </head>
 
 <body >
@@ -287,6 +288,21 @@
 
 		$('#' + elemId).readme(options).then(function(){
 			appendClipboard(elemId);
+			//anchors.options.visible = 'always';
+			//icon: '¶'
+
+			anchors.options = {
+				  placement: 'left',
+				  visible: 'always'
+				};
+			anchors.add('#' + elemId + ' h1, #' + elemId + ' h2, #' + elemId + ' h3' + ',#' + elemId + ' h4');
+			var hash = location.hash.replace('#','');
+
+		    if(hash != '') {
+		       if ($('#' + hash)) {
+		       		$('html, body').animate({ scrollTop: $('#' + hash).offset().top}, 1000);
+		       }
+		     }
 		});
 		
 	}
