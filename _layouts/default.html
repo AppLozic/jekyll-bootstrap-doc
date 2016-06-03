@@ -315,14 +315,18 @@
     	loadDoc("platform-doc", "PLATFORM-DOC.md");
     	loadDoc("configuration-doc", "CONFIGURATION-DOC.md");
 
-		if ($.cookie("mckUserId")) {
-            userId = $.cookie("mckUserId");
-        } else {
-            userId = getRandomId();
-            firstTimeUser = true;
-            $.cookie("mckUserId", userId);
-        }
+    	userId = (typeof localStorage !== 'undefined') ?  localStorage.getItem('mckLoginId') : "";
 
+    	if (userId == "") {
+	    	if ($.cookie("mckUserId")) {
+	            userId = $.cookie("mckUserId");
+	        } else {
+	            userId = getRandomId();
+	            firstTimeUser = true;
+	            $.cookie("mckUserId", userId);
+	        }
+    	}
+		
         initChat(userId, displayName);
 
 		$(document).on('click', "#chat-help", function(e) {
