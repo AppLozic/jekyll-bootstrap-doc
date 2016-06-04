@@ -317,10 +317,11 @@
 
     	userId = (typeof localStorage !== 'undefined') ?  localStorage.getItem('mckLoginId') : "";
 
-    	if (userId == "") {
+    	if (userId == "" || userId == null) {
 	    	if ($.cookie("mckUserId")) {
 	            userId = $.cookie("mckUserId");
-	        } else {
+	        }  
+          if (userId == "" || userId == null) {
 	            userId = getRandomId();
 	            firstTimeUser = true;
 	            $.cookie("mckUserId", userId);
