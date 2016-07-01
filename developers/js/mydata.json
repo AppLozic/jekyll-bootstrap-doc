@@ -1,0 +1,20 @@
+[
+    {
+    "firstName":"John",
+    "lastName":"Doe",
+    "linkedInProfile":"https://linkedin.com/",
+    "facebookProfile":"https://www.facebook.com/"
+    }, 
+    {
+    "firstName":"Anna",
+    "lastName":"Smith",
+    "linkedInProfile":"https://linkedin.com/",
+    "facebookProfile":"https://www.facebook.com/"
+    },
+    {
+    "firstName":"Peter",
+    "lastName":"Jones",
+    "linkedInProfile":"https://linkedin.com/",
+    "facebookProfile":"https://www.facebook.com/"
+    }
+]
