@@ -8,10 +8,32 @@ body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
+.col-xs-6 a {
+    padding: 6px;
+    text-align: center !important;
+    float: none !important;
+}
+
+.title{
+    text-align: center;
+}
+
+
+.img-margin{ 
+    margin-top: 10px;
+}
+
+
 .portfolio-item {
     margin-bottom: 25px;
+}
+
+/*integration*/
+.panel-body {
+    padding: 6px 1px;
 }
 
 footer {
     margin: 50px 0;
 }
+
