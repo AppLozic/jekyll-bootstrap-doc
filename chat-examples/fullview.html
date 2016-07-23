@@ -1,14 +1,11 @@
 <html>
 <head>
 <!-- Custom CSS -->
-<title>Applozic Web Chat Sample code</title>
+<link href="css/mck-app-combined.css" rel="stylesheet">
+<link href="css/app/mck-fullview-1.0.css" rel="stylesheet">
 
-<link href="css/apz-app-combined.css" rel="stylesheet">
-<link href="css/app/mck-sidebox-2.0.css" rel="stylesheet">
-
-<link rel="stylesheet" href="css/reset.css">
-<link rel="stylesheet" href="css/style2.css">
 <!-- Custom JS -->
+<link rel="stylesheet" href="css/style.css">
 <script type="text/javascript">
 	var $original;
 	if (typeof jQuery !== 'undefined') {
@@ -86,10 +83,10 @@
 										<li id="li-mck-block-user" class="vis"><a href="#"
 											id="mck-block-button" class="menu-item" title="Block User">Block
 												User</a></li>
-										<li id="li-mck-group-info"
+										<!-- <li id="li-mck-group-info"
 											class="mck-group-menu-options n-vis"><a href="#"
 											id="mck-group-info-btn" class="menu-item" title="Group Info">
-												Group Info </a></li>
+												Group Info </a></li> -->
 										<li id="li-mck-leave-group"
 											class="mck-group-menu-options n-vis"><a href="#"
 											id="mck-leave-group-btn" class="menu-item" title="Exit Group">
@@ -223,7 +220,7 @@
 					<div class="blk-lg-2">
 						<button type="button" class="mck-box-close" data-dismiss="mckbox"
 							aria-label="Close">
-							<span aria-hidden="true">ï¿½</span>
+							<span aria-hidden="true">×</span>
 						</button>
 					</div>
 				</div>
@@ -269,7 +266,7 @@
 	<script type="text/javascript"
 		src="https://maps.google.com/maps/api/js?key=AIzaSyDKfWHzu9X7Z2hByeW4RRFJrD9SizOzZt4&libraries=places"></script>
 	<script type="text/javascript" src="js/locationpicker.jquery.min.js"></script>
-	<script type="text/javascript" src="js/app/chat.js"></script>
+	<script type="text/javascript" src="js/app/mck-fullview-1.0.js"></script>
 	<script type="text/javascript">
 		var oModal = "";
 		if (typeof $original !== 'undefined') {
@@ -334,9 +331,7 @@
 							//Function to initialize plugin
 							$applozic.fn
 									.applozic({
-										baseUrl : 'https://apps.applozic.com/',
-										userId : 'shanki.connect',
-										appId : 'applozic-sample-app',
+										userId: 'customer-1', userName: 'Customer1', appId: 'applozic-sample-app',
 										ojq : $original,
 										obsm : oModal,
 										notificationIconLink : "https://www.applozic.com/resources/images/applozic_icon.png",
@@ -354,7 +349,7 @@
 						});
 	</script>
 
-	<script src="js/index.js"></script>
+<!-- 	<script src="js/index.js"></script> -->
 
 </body>
 </html>
