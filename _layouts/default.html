@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{page.htmlTitle}}</title>
   <meta  property="og:title" content="Applozic - Chat and Messaging SDK Documentation">
-  <meta name="description" content="Welcome to Applozic Chat and Messaging SDK. It powers real time messaging across any device, any platform and anywhere in the world.">
+  <meta name="description" content=""Applozic is the reliable, secure and best CHAT and MESSAGING SDK, enables you to add messaging in just few minutes on your android, iOS, phonegap, ionic and web apps.">
   <meta property="og:description" content="Chat and Messaging SDK Documentation">
   <meta property="og:url" content="https://www.applozic.com/docs/index.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Applozic">
   <meta name="keyword"  content="Applozic,open,chat,API,instant,messaging,best,develop,sdk,android,ios,phonegap,web,plugin,solution,website,platform,in-app,messaging,messenger,integration,client,developers,real-time,docs,async,application,in-app-messaging,features,android-chat-sdk,
   android-web-plugin,instant-messaging-app,application-like-WhatsApp,chat-integration">
-  
 
-  
+
+
 
 
 
@@ -111,11 +111,11 @@
     </div>
   </div>
   {% endif %}
- 
+
 
    <div class="container">
        <div class="row">
- 
+
 	      <div class="">
 	        <ul class="bs-docs-social-buttons">
 	         {% if page.isHome and site.githubButton.user and site.githubButton.repo %}
@@ -221,10 +221,10 @@
                       </li>
 
                       <li>
-              
+
                       <iframe class="github-btn btn-md-outline" src="https://ghbtns.com/github-btn.html?user={{site.githubButton.user}}&amp;repo={{page.github}}&amp;type=fork&amp;count=true" width="90" height="20" title="Fork on GitHub"></iframe>
                       </li>
-                      
+
                       </ul>
               </div>
         </section>
@@ -248,7 +248,7 @@
 			 <p>To schedule a demo write to us at growth@applozic.com or click the below button.</p>
 			 <p><a href="https://calendly.com/devashish-applozic" target="_blank" class="btn btn-md btn-outline">Schedule Demo</a></p>
 		</section>
-	
+
 		 <section class="bs-docs-section">
 			 <h1 id="contact" class="page-header">Contact</h1>
 			 <p>Couldn't find what you are looking for? No worries, send us a mail at contact@applozic.com and we will get back to you.</p>
@@ -389,7 +389,7 @@
 		       }
 		     }
 		});
-		
+
 	}
 
     $(function () {
@@ -397,22 +397,22 @@
         loadDoc("customization-doc", "CUSTOMIZATION-DOC.md");
 		    loadDoc("advanced-doc", "ADVANCED-DOC.md");
     	 //loadDoc("sample-code", "SAMPLE-CODE-DOC.md");
-    	 loadDoc("platform-doc", "PLATFORM-DOC.md");
-    	 loadDoc("configuration-doc", "CONFIGURATION-DOC.md");
+    	 //loadDoc("platform-doc", "PLATFORM-DOC.md");
+    	 //loadDoc("configuration-doc", "CONFIGURATION-DOC.md");
 
     	userId = (typeof localStorage !== 'undefined') ?  localStorage.getItem('mckLoginId') : "";
 
     	if (userId == "" || userId == null) {
 	    	if ($.cookie("mckUserId")) {
 	            userId = $.cookie("mckUserId");
-	        }  
+	        }
           if (userId == "" || userId == null) {
 	            userId = getRandomId();
 	            firstTimeUser = true;
 	            $.cookie("mckUserId", userId);
 	        }
     	}
-		
+
         initChat(userId, displayName);
 
 		$(document).on('click', "#chat-help", function(e) {
@@ -430,7 +430,7 @@
 			$applozic.fn.applozic('loadTab', 'applozic');
 			return;
 		}
-		 (function(d, m){var s, h;       
+		 (function(d, m){var s, h;
 			   s = document.createElement("script");
 			   s.type = "text/javascript";
 			   s.async=true;
@@ -440,14 +440,14 @@
 			   window.applozic=m;
 			   m.init=function(t){m._globals=t;}})(document, window.applozic || {});
 
-		window.applozic.init({appId: 'applozic-sample-app', userId: userId, userName: displayName, 
-			desktopNotification: true,  notificationIconLink: 'https://www.applozic.com/favicon.ico', 
+		window.applozic.init({appId: 'applozic-sample-app', userId: userId, userName: displayName,
+			desktopNotification: true,  notificationIconLink: 'https://www.applozic.com/favicon.ico',
 			mode: "support",
 			supportId: "applozic",
-			contactDisplayName: function(contactId) { 
-				if (contactId == "applozic") { 
+			contactDisplayName: function(contactId) {
+				if (contactId == "applozic") {
 					return "Applozic Help";
-				} 
+				}
 			},
 			onInit: function(response) {
 					loggedIn = true;
@@ -456,7 +456,7 @@
                         }
 					if (response == "success") {
 						//$applozic.fn.applozic('loadTab', 'applozic');
-					} 
+					}
 				}
 			});
 
