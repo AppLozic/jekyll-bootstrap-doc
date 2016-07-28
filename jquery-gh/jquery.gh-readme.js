@@ -1285,10 +1285,10 @@ if (typeof exports === 'object') {
 			path = options.path;
 		}
 
-    var markdownToConvert = decodeBase64(jQuery.i18n.prop((owner + '.' + repo + '.contents.' + path).replace(/-/g, "_")));
+    /*var markdownToConvert = decodeBase64(jQuery.i18n.prop((owner + '.' + repo + '.contents.' + path).replace(/-/g, "_")));
     var html = convertMarkdown(markdownToConvert);
     $(self).html(html);
-
+*/
 		$.get('https://api.github.com/repos/' + owner + '/' + repo + '/contents/' + path, function (response) {
 			var markdownToConvert = decodeBase64(response.content);
 			var html = convertMarkdown(markdownToConvert);

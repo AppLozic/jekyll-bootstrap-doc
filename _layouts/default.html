@@ -370,7 +370,14 @@
           visible: 'always'
         };
 
-        jQuery.i18n.properties({
+        loadDoc("integration-doc", "INTEGRATION-DOC.md");
+        loadDoc("customization-doc", "CUSTOMIZATION-DOC.md");
+        loadDoc("advanced-doc", "ADVANCED-DOC.md");
+        //loadDoc("sample-code", "SAMPLE-CODE-DOC.md");
+        loadDoc("platform-doc", "PLATFORM-DOC.md");
+        loadDoc("configuration-doc", "CONFIGURATION-DOC.md");
+
+        /*jQuery.i18n.properties({
             name:'Messages',
             path:'{{site.github.url}}/assets/bundle/',
             mode:'both',
@@ -383,7 +390,7 @@
               loadDoc("platform-doc", "PLATFORM-DOC.md");
               loadDoc("configuration-doc", "CONFIGURATION-DOC.md");
             }
-        });
+        });*/
 
     	userId = (typeof localStorage !== 'undefined') ?  localStorage.getItem('mckLoginId') : "";
 
