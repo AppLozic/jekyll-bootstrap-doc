@@ -35,7 +35,7 @@
     }
   </style>
 
-  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
   <script type="text/javascript" language="JavaScript" src="{{site.github.url}}/assets/js/jquery.i18n.properties.min.js"></script>
   <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.3.0/bootbox.min.js"></script>
@@ -361,31 +361,7 @@
 	var firstTimeUser = false;
 	var welcomeMessage = "Welcome to Applozic, may I know your name and company name?";
 
-	function loadDoc(elemId, docPath) {
-		if ($('#' + elemId).length < 1) {
-			return;
-		}
-		var options = {
-		    	owner: '{{site.githubButton.user}}',
-	            repo: '{{page.github}}',
-	            path: docPath
-	        };
-
-		$('#' + elemId).readme(options).then(function(){
-			appendClipboard(elemId);
-
-			anchors.add('#' + elemId + ' h1, #' + elemId + ' h2, #' + elemId + ' h3' + ',#' + elemId + ' h4');
-			var hash = location.hash.replace('#','');
-
-		    if(hash != '') {
-		       if ($('#' + hash)) {
-		       		$('html, body').animate({ scrollTop: $('#' + hash).offset().top}, 1000);
-		       }
-		     }
-		});
-	}
-
-    $(function () {
+    $(document).ready(function(){
 
       //anchors.options.visible = 'always';
       //icon: '¶'
@@ -403,7 +379,7 @@
               loadDoc("integration-doc", "INTEGRATION-DOC.md");
               loadDoc("customization-doc", "CUSTOMIZATION-DOC.md");
               loadDoc("advanced-doc", "ADVANCED-DOC.md");
-              loadDoc("sample-code", "SAMPLE-CODE-DOC.md");
+              //loadDoc("sample-code", "SAMPLE-CODE-DOC.md");
               loadDoc("platform-doc", "PLATFORM-DOC.md");
               loadDoc("configuration-doc", "CONFIGURATION-DOC.md");
             }
@@ -433,6 +409,30 @@
 			var $spy = $(this).scrollspy('refresh');
 		});*/
    });
+
+   function loadDoc(elemId, docPath) {
+     if ($('#' + elemId).length < 1) {
+       return;
+     }
+     var options = {
+           owner: '{{site.githubButton.user}}',
+               repo: '{{page.github}}',
+               path: docPath
+           };
+
+     $('#' + elemId).readme(options).then(function(){
+       appendClipboard(elemId);
+
+       anchors.add('#' + elemId + ' h1, #' + elemId + ' h2, #' + elemId + ' h3' + ',#' + elemId + ' h4');
+       var hash = location.hash.replace('#','');
+
+         if(hash != '') {
+            if ($('#' + hash)) {
+               $('html, body').animate({ scrollTop: $('#' + hash).offset().top}, 1000);
+            }
+          }
+     });
+   }
 
    function initChat(userId, displayName) {
    		if (loggedIn) {
