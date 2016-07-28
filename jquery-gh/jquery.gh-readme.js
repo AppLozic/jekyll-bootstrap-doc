@@ -1285,6 +1285,10 @@ if (typeof exports === 'object') {
 			path = options.path;
 		}
 
+    var markdownToConvert = decodeBase64(jQuery.i18n.prop((owner + '.' + repo + '.contents.' + path).replace(/-/g, "_")));
+    var html = convertMarkdown(markdownToConvert);
+    $(self).html(html);
+
 		$.get('https://api.github.com/repos/' + owner + '/' + repo + '/contents/' + path, function (response) {
 			var markdownToConvert = decodeBase64(response.content);
 			var html = convertMarkdown(markdownToConvert);
@@ -1293,20 +1297,5 @@ if (typeof exports === 'object') {
 		});
 		return deferred.promise();
 	};
-
- $.fn.readIt = function (options) {
-    var owner = options.owner;
-    var self = this;
-    var repo = options.repo;
-    var path = 'README.md';
-    if (options.path != "") {
-      path = options.path;
-    }
-
-    var markdownToConvert = decodeBase64(jQuery.i18n.prop((owner + '.' + repo + '.contents.' + path).replace(/-/g, "_")));
-    var html = convertMarkdown(markdownToConvert);
-    $(self).html(html);
-  };
-
 
 })(jQuery);
