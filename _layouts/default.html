@@ -36,6 +36,7 @@
   </style>
 
   <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript" language="JavaScript" src="{{site.github.url}}/assets/js/jquery.i18n.properties.min.js"></script>
   <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.3.0/bootbox.min.js"></script>
   <script src="{{site.github.url}}/assets/js/docs.min.js"></script>
@@ -172,7 +173,7 @@
 		  <!-- each section must contain ONE h1 with an id and optionally a "page-header" class -->
 		  <h1 id="first-level" class="page-header">Application Key</h1>
 		  <p>Application Key is a unique identifier provided by Applozic for each application.</p>
-		  <p>New user? <a href="https://www.applozic.com/signup.html">Claim Application Key</a></p>
+		  <p>New user? <a href="https://www.applozic.com/signup.html">Get Application Key for FREE</a></p>
 		  <p>Already Registered? <a href="https://www.applozic.com/admin/dashboard.html" target="_blank">Get Application Key</a></p>
 		</section>
 
@@ -346,8 +347,6 @@
 
    <!-- Applozic scripts
   =========================================== -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-
 	<script src="jquery-gh/jquery.gh-readme.js"></script>
 
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
@@ -372,15 +371,11 @@
 	            path: docPath
 	        };
 
+    $('#' + elemId).readIt(options);
+
 		$('#' + elemId).readme(options).then(function(){
 			appendClipboard(elemId);
-			//anchors.options.visible = 'always';
-			//icon: '¶'
 
-			anchors.options = {
-				  placement: 'left',
-				  visible: 'always'
-				};
 			anchors.add('#' + elemId + ' h1, #' + elemId + ' h2, #' + elemId + ' h3' + ',#' + elemId + ' h4');
 			var hash = location.hash.replace('#','');
 
@@ -390,16 +385,31 @@
 		       }
 		     }
 		});
-
 	}
 
     $(function () {
-        loadDoc("integration-doc", "INTEGRATION-DOC.md");
-        loadDoc("customization-doc", "CUSTOMIZATION-DOC.md");
-		    loadDoc("advanced-doc", "ADVANCED-DOC.md");
-    	 //loadDoc("sample-code", "SAMPLE-CODE-DOC.md");
-    	 //loadDoc("platform-doc", "PLATFORM-DOC.md");
-    	 //loadDoc("configuration-doc", "CONFIGURATION-DOC.md");
+
+      //anchors.options.visible = 'always';
+      //icon: '¶'
+      anchors.options = {
+          placement: 'left',
+          visible: 'always'
+        };
+
+        jQuery.i18n.properties({
+            name:'Messages',
+            path:'{{site.github.url}}/assets/bundle/',
+            mode:'both',
+            async: true,
+            callback: function() {
+              loadDoc("integration-doc", "INTEGRATION-DOC.md");
+              loadDoc("customization-doc", "CUSTOMIZATION-DOC.md");
+              loadDoc("advanced-doc", "ADVANCED-DOC.md");
+              loadDoc("sample-code", "SAMPLE-CODE-DOC.md");
+              loadDoc("platform-doc", "PLATFORM-DOC.md");
+              loadDoc("configuration-doc", "CONFIGURATION-DOC.md");
+            }
+        });
 
     	userId = (typeof localStorage !== 'undefined') ?  localStorage.getItem('mckLoginId') : "";
 
