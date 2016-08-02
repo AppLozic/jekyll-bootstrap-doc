@@ -1,3 +1,7 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 .bs-docs-masthead-main {
   padding-top:15px;
   padding-bottom:15px;
@@ -101,4 +105,19 @@ table>tbody>tr:nth-of-type(odd) {
 
 .bs-docs-masthead, .bs-docs-header {
   color: whitesmoke;
+}
+
+.bs-docs-sidebar .nav>li>a:hover, .bs-docs-sidebar .nav>li>a:focus {
+  color: #11b8bb;
+  border-left: 1px solid #11b8bb;
+}
+
+.bs-docs-sidebar .nav>.active>a, .bs-docs-sidebar .nav>.active:hover>a, .bs-docs-sidebar .nav>.active:focus>a {
+  color: #11b8bb;
+  border-left: 2px solid #11b8bb;
+}
+
+.bs-docs-nav .navbar-nav>li>a:hover, .bs-docs-nav .navbar-nav>.active>a, .bs-docs-nav .navbar-nav>.active>a:hover {
+  color: #11b8bb;
+  background: none;
 }
