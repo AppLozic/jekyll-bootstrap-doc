@@ -14,8 +14,6 @@
   android-web-plugin,instant-messaging-app,application-like-WhatsApp,chat-integration">
 
 
-
-
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
   <!--[if lt IE 9]>
@@ -37,13 +35,12 @@
   </style>
 
   <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-  <script type="text/javascript" language="JavaScript" src="{{site.github.url}}/assets/js/readmecache.js"></script>
-
 <!--  <script type="text/javascript" language="JavaScript" src="{{site.github.url}}/assets/js/jquery.i18n.properties.min.js"></script>
 -->
   <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.3.0/bootbox.min.js"></script>
   <script src="{{site.github.url}}/assets/js/docs.min.js"></script>
+
   <script src="{{site.github.url}}/assets/js/anchor.min.js"></script>
 </head>
 
@@ -348,16 +345,15 @@
     </div>
   </footer>
 
-
-   <!-- Applozic scripts
-  =========================================== -->
+  <script type="text/javascript" language="JavaScript" src="{{site.github.url}}/assets/js/readmecache.js"></script>
 	<script src="jquery-gh/jquery.gh-readme.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-
-	 <script src="{{site.github.url}}/assets/js/clipboard.min.js"></script>
+  <script src="{{site.github.url}}/assets/js/clipboard.min.js"></script>
 
 
+  <!-- Applozic scripts
+ =========================================== -->
 	<script>
 
 	var userId, displayName = "";
@@ -366,7 +362,6 @@
 	var welcomeMessage = "Welcome to Applozic, may I know your name and company name?";
 
     $(document).ready(function(){
-
       //anchors.options.visible = 'always';
       //icon: '¶'
       anchors.options = {
@@ -416,9 +411,12 @@
 			initChat(userId, displayName);
 		});
 
-		 /*$('[data-spy="scroll"]').each(function () {
+		 $('[data-spy="scroll"]').each(function () {
 			var $spy = $(this).scrollspy('refresh');
-		});*/
+		});
+
+    //$(this).scrollTop(0);
+
    });
 
    function loadDoc(elemId, docPath) {

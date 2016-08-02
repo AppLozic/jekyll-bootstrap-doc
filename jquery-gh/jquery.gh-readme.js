@@ -1301,7 +1301,9 @@ if (typeof exports === 'object') {
 			var html = convertMarkdown(markdownToConvert);
 			$(self).html(html);
 			deferred.resolve();
-		});
+		}).error(function() {
+      deferred.resolve();
+    });
 		return deferred.promise();
 	};
 
