@@ -9,6 +9,9 @@
     padding-bottom: 35px;
 }
 
+.bs-docs-section img {
+  max-width: 100%
+}
 
 .h1, .h2, .h3, h1, h2, h3 {
     margin-top: 20px;
