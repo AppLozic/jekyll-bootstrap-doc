@@ -119,5 +119,9 @@ table>tbody>tr:nth-of-type(odd) {
 
 .bs-docs-nav .navbar-nav>li>a:hover, .bs-docs-nav .navbar-nav>.active>a, .bs-docs-nav .navbar-nav>.active>a:hover {
   color: #11b8bb;
-  background: none;
+  background: white;
+}
+
+.bs-docs-masthead, .bs-docs-header {
+  background-color: white;
 }

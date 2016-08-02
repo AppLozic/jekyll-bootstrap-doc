@@ -1285,6 +1285,13 @@ if (typeof exports === 'object') {
 			path = options.path;
 		}
 
+    var name = (options.owner + '.' + options.repo + '.contents.' + options.path).replace(/-/g, "_");
+    var data = README_DATA[name];
+    if (data) {
+      var markdownToConvert = decodeBase64(README_DATA[name]);
+      var html = convertMarkdown(markdownToConvert);
+      $(self).html(html);
+    }
     /*var markdownToConvert = decodeBase64(jQuery.i18n.prop((owner + '.' + repo + '.contents.' + path).replace(/-/g, "_")));
     var html = convertMarkdown(markdownToConvert);
     $(self).html(html);
