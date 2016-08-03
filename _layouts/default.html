@@ -33,6 +33,16 @@
       background:linear-gradient(135deg, {{site.header.color1}}, {{site.header.color2}});*/
       background-image: url('{{site.github.url}}/assets/images/main-background.jpg');
     }
+
+    {% if page.isHome %}
+      body {
+        background-color: whitesmoke;
+      }
+
+      #content:after {
+        background:linear-gradient(135deg, transparent 50px, whitesmoke 50px);
+      }
+    {% endif %}
   </style>
 
   <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
@@ -67,20 +77,24 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{{site.github.url}}/index.html">{{site.name}}</a>
+        <a class="navbar-brand" href="{{site.github.url}}/index.html">
+          <img src="{{site.github.url}}/assets/images/applozic_transparent.png" />
+        </a>
       </div>
       <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
         <ul class="nav navbar-nav">
-        {% assign sorted_pages = site.pages | sort:"order" %}
-        {% for p in sorted_pages %}
-          {% if p.isHome != true and p.hide != true and p.title !=  %}
-          <li {% if page.title == p.title %}class="active"{% endif %}>
-            <a href="{{site.github.url}}{{p.url}}">{{p.title}}</a>
-          </li>
-          {% endif %}
-        {% endfor %}
+
         </ul>
         <ul class="nav navbar-nav navbar-right">
+          {% assign sorted_pages = site.pages | sort:"order" %}
+          {% for p in sorted_pages %}
+            {% if p.isHome != true and p.hide != true and p.title !=  %}
+            <li {% if page.title == p.title %}class="active"{% endif %}>
+              <a href="{{site.github.url}}{{p.url}}">{{p.title}}</a>
+            </li>
+            {% endif %}
+          {% endfor %}
+
           <li>
             <a class="" href="https://www.applozic.com/signin.html">SignIn</a>
           </li>

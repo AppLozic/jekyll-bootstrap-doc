@@ -10,7 +10,7 @@ body {
 
 .bs-docs-header {
 	padding-top: 35px;
-    padding-bottom: 35px;
+  padding-bottom: 35px;
 }
 
 .bs-docs-section img {
@@ -103,10 +103,6 @@ table>tbody>tr:nth-of-type(odd) {
 	background-color: #f9f9f9;
 }
 
-.bs-docs-masthead, .bs-docs-header {
-  color: whitesmoke;
-}
-
 .bs-docs-sidebar .nav>li>a:hover, .bs-docs-sidebar .nav>li>a:focus {
   color: #11b8bb;
   border-left: 1px solid #11b8bb;
@@ -123,6 +119,7 @@ table>tbody>tr:nth-of-type(odd) {
 }
 
 .bs-docs-masthead, .bs-docs-header {
+  color: whitesmoke;
   background-color: white;
 }
 
@@ -217,11 +214,35 @@ table>tbody>tr:nth-of-type(odd) {
 }
 
 .navbar .nav li>a.btn-signup {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-top: 10px;
-    margin-bottom: 10px;
     background: #11b8bb !important;
     color: #fff !important;
     border: 1px solid #0fb7c0;
+    text-transform: uppercase;
+}
+
+.navbar-brand {
+    float: left;
+    height: 60px;
+    padding: 5px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.navbar .nav li>a {
+    margin: 17px 8px;
+    padding: 6px 12px;
+    text-shadow: none;
+    color: #3f4244;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.navbar-brand>img {
+  height:60px;
+  display:inline-block;
+}
+
+.bs-docs-footer {
+  background-color: white;
 }
