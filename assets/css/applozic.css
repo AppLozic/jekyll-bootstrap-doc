@@ -207,3 +207,21 @@ table>tbody>tr:nth-of-type(odd) {
     font-size: 56px;
     line-height: 1;
 }
+
+.navbar .nav li>a {
+    text-shadow: none;
+    color: #3f4244;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.navbar .nav li>a.btn-signup {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: #11b8bb !important;
+    color: #fff !important;
+    border: 1px solid #0fb7c0;
+}
