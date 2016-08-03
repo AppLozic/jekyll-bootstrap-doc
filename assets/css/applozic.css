@@ -270,3 +270,7 @@ table>tbody>tr:nth-of-type(odd) {
 .btn-outline-inverse:hover,.btn-outline-inverse:focus,.btn-outline-inverse:active {
   color:#11b8bb;
 }
+
+.bs-docs-sidebar .nav>.active>a, .bs-docs-sidebar .nav>.active:hover>a, .bs-docs-sidebar .nav>.active:focus>a {
+  font-weight: 500;
+}
