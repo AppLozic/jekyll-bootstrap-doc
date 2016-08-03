@@ -226,6 +226,7 @@ table>tbody>tr:nth-of-type(odd) {
     padding: 5px;
     font-size: 18px;
     line-height: 20px;
+    margin-left: 15px;
 }
 
 .navbar .nav li>a {
