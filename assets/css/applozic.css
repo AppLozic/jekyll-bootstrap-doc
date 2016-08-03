@@ -276,10 +276,14 @@ table>tbody>tr:nth-of-type(odd) {
 }
 
 .item-inner .intro {
-  font-size: 16px;
+  font-size: 15px;
   min-height: 88px;
 }
 
 .bs-docs-footer {
   margin-top: 60px;
+}
+
+.bs-docs-header p {
+  font-size: 18px;
 }
