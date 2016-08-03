@@ -125,3 +125,85 @@ table>tbody>tr:nth-of-type(odd) {
 .bs-docs-masthead, .bs-docs-header {
   background-color: white;
 }
+
+.cards-section .item {
+    margin-bottom: 30px;
+}
+
+.cards-section .item-inner {
+    padding: 30px 20px;
+    background: #fff;
+    position: relative;
+    border: 1px solid #f0f0f0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+
+.cards-section .item-android .item-inner {
+    border-top: 3px solid #75c181;
+}
+
+.cards-section .item-android .item-inner .fa {
+    color: #75c181;
+}
+
+.cards-section .item-apple .item-inner {
+    border-top: 3px solid #C0C0C0;
+}
+
+.cards-section .item-apple .item-inner .fa {
+    color: #C0C0C0;
+}
+
+.cards-section .item-web .item-inner {
+    border-top: 3px solid #58bbee;
+}
+
+.cards-section .item-web .item-inner .fa {
+    color: #58bbee;
+}
+
+.cards-section .item-platform .item-inner {
+    border-top: 3px solid #40babd;
+}
+
+.cards-section .item-platform .item-inner .fa {
+    color: #40babd;
+}
+
+.cards-section .item-phonegap .item-inner {
+    border-top: 3px solid #262E3D;
+}
+
+.cards-section .item-phonegap .item-inner .fa{
+    color: #262E3D;
+}
+
+.cards-section .item-configuration .item-inner {
+    border-top: 3px solid #F88C30;
+}
+
+.cards-section .item-configuration .item-inner .fa{
+    color: #F88C30;
+}
+
+
+.item-inner a {
+  color: black;
+}
+
+.item-inner a:hover {
+  text-decoration: none;
+  color: #11b8bb;
+}
+
+.bs-docs-header h1 {
+    font-size: 56px;
+    line-height: 1;
+}
