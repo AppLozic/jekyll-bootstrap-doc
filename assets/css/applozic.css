@@ -277,4 +277,9 @@ table>tbody>tr:nth-of-type(odd) {
 
 .item-inner .intro {
   font-size: 16px;
+  min-height: 88px;
+}
+
+.bs-docs-footer {
+  margin-top: 60px;
 }
