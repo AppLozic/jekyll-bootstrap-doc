@@ -176,9 +176,13 @@
     <div class="row">
       <!-- Content
       =========================================== -->
-      <div class="col-md-9" role="main">
+
+    {% if page.isHome %}
+        <div class="col-md-9" role="main">
+    {% endif %}
 
 		{% if page.isHome == false %}
+      <div class="docs-main-section col-md-9" role="main">
 
         <section class="bs-docs-section">
     		  <h1 id="first-level" class="page-header">Overview</h1>

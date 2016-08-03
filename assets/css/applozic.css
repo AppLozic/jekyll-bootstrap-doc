@@ -287,3 +287,7 @@ table>tbody>tr:nth-of-type(odd) {
 .bs-docs-header p {
   font-size: 18px;
 }
+
+.docs-main-section {
+  border-right: 1px solid #eee;
+}
