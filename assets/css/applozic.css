@@ -251,3 +251,22 @@ table>tbody>tr:nth-of-type(odd) {
 .bs-docs-header p {
   line-height: 1;
 }
+
+.btn-outline {
+    color: #11b8bb;
+    background-color: transparent;
+    border-color: #11b8bb;
+}
+
+.btn-outline:hover,.btn-outline:focus,.btn-outline:active {
+  background-color:#11b8bb;
+  border-color:#11b8bb;
+}
+
+.btn-outline-inverse {
+  border-color:#11b8bb;
+}
+
+.btn-outline-inverse:hover,.btn-outline-inverse:focus,.btn-outline-inverse:active {
+  color:#11b8bb;
+}
