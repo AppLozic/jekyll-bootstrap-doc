@@ -128,7 +128,7 @@ table>tbody>tr:nth-of-type(odd) {
 }
 
 .cards-section .item-inner {
-    padding: 30px 20px;
+    padding: 20px 10px;
     background: #fff;
     position: relative;
     border: 1px solid #f0f0f0;
@@ -273,4 +273,8 @@ table>tbody>tr:nth-of-type(odd) {
 
 .bs-docs-sidebar .nav>.active>a, .bs-docs-sidebar .nav>.active:hover>a, .bs-docs-sidebar .nav>.active:focus>a {
   font-weight: 500;
+}
+
+.item-inner .intro {
+  font-size: 16px;
 }
