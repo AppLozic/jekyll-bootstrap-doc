@@ -396,6 +396,7 @@
         loadDoc("platform-doc", "PLATFORM-DOC.md");
         loadDoc("configuration-doc", "CONFIGURATION-DOC.md");
 
+
         /*jQuery.i18n.properties({
             name:'Messages',
             path:'{{site.github.url}}/assets/bundle/',
@@ -439,8 +440,14 @@
 
    });
 
+
+   var calls = 0;
+   var completed = 0;
+
    function loadDoc(elemId, docPath) {
+     calls++;
      if ($('#' + elemId).length < 1) {
+       completed++;
        return;
      }
      var options = {
@@ -448,9 +455,12 @@
                repo: '{{page.github}}',
                path: docPath
            };
-
      $('#' + elemId).readme(options).then(function(){
        appendClipboard(elemId);
+       completed++;
+       if (completed >= calls) {
+         buildSideMenu();
+       }
 
        anchors.add('#' + elemId + ' h1, #' + elemId + ' h2, #' + elemId + ' h3' + ', #' + elemId + ' h4' + ', #' + elemId + ' h5');
        var hash = location.hash.replace('#','');
