@@ -18,19 +18,24 @@
 </head>
 <body>
 
+	
 	<div class="wrapper">
-		<div class="container">
+		<div class="mck-container">
 			<div class="left mck-message-inner-left">
 				<div class="panel-content">
 					<div class="top">
-						<input type="text" id="mck-search" data-provide="typeahead"
-							placeholder="Search..." autofocus /> <a href="#"
-							class="mck-tab-search search"></a>
+					    <span class="mck-search-icon">
+ 							  <a href="#" role="link" class="mck-tab-search">
+ 									 <span class="mck-icon-search"></span>
+ 							  </a>
+ 						</span>
+ 						<input type="text" id="mck-search" data-provide="typeahead"
+							placeholder="Search..." autofocus />
 					</div>
 					<div class="mck-panel-body">
 						<div id="mck-contact-cell" class="mck-panel-cell">
 							<div class="mck-panel-inner mck-contacts-inner">
-								<ul id="mck-contact-list" class="people mck-contact-list">
+								<ul id="mck-contact-list" class="people mck-contact-list mck-nav mck-nav-tabs mck-nav-stacked">
 							</div>
 							<div id="mck-contact-loading" class="mck-loading">
 								<span class="mck-icon-loading"></span>
@@ -70,8 +75,9 @@
 								<div id="mck-tab-menu" class="mck-menu-item">
 									<div class="mck-dropdown-toggle" data-toggle="mckdropdown"
 										aria-expanded="true">
-										<img src="css/app/images/icon-menu.png" class="mck-menu-icon"
-											alt="Tab Menu">
+										<img
+											src="css/app/images/icon-menu.png"
+											class="mck-menu-icon" alt="Tab Menu">
 									</div>
 									<ul id="mck-tab-menu-list"
 										class="mck-dropdown-menu mck-tab-menu-box menu-right"
@@ -83,10 +89,10 @@
 										<li id="li-mck-block-user" class="vis"><a href="#"
 											id="mck-block-button" class="menu-item" title="Block User">Block
 												User</a></li>
-										<!-- <li id="li-mck-group-info"
+										<li id="li-mck-group-info"
 											class="mck-group-menu-options n-vis"><a href="#"
 											id="mck-group-info-btn" class="menu-item" title="Group Info">
-												Group Info </a></li> -->
+												Group Info </a></li>
 										<li id="li-mck-leave-group"
 											class="mck-group-menu-options n-vis"><a href="#"
 											id="mck-leave-group-btn" class="menu-item" title="Exit Group">
@@ -168,14 +174,15 @@
 												<li><a id="mck-file-up" href="#"
 													class="mck-file-upload menu-item" title="File &amp; Photos">
 
-														<img src="css/app/images/mck-icon-photo.png"
+														<img
+														src="css/app/images/mck-icon-photo.png"
 														class="menu-icon" alt="File &amp; Photos"> <span>Files
 															&amp; Photos</span>
 												</a></li>
 												<li><a id="mck-btn-loc" href="#" class="menu-item"
 													title="Location"> <img
-														src="css/app/images/mck-icon-marker.png" class="menu-icon"
-														alt="Location"> <span>Location</span>
+														src="css/app/images/mck-icon-marker.png"
+														class="menu-icon" alt="Location"> <span>Location</span>
 												</a></li>
 
 											</ul>
@@ -204,6 +211,71 @@
                   <a href="javascript:;" id = "mck-btn-smiley" class="write-link smiley"></a>
                   <a href="javascript:;" class="write-link send"></a>
                 -->
+					</div>
+				</div>
+			</div>
+			<div id="mck-group-info-tab"
+				class="mck-group-info-tab mck-panel-sm mck-panel n-vis">
+				<div class="panel-content">
+					<div class="mck-box-top mck-panel-top">
+						<div class="blk-lg-10">
+							<div class="mck-box-title mck-truncate" title="Group Info">Group
+								Info</div>
+						</div>
+						<div class="blk-lg-2">
+							<button type="button" id="mck-group-info-close"
+								class="mck-box-close mck-close-panel move-right">
+								<span aria-hidden="true">x</span>
+							</button>
+						</div>
+					</div>
+					<div id="mck-group-detail-panel" class="mck-group-detail-box">
+						<div class="mck-group-icon-sec">
+							<div id="mck-group-icon-box" class="mck-group-icon-box">
+								<div class="mck-group-icon">
+									<img
+										src="https://www.applozic.com/resources/images/applozic_logo.gif">
+								</div>
+							</div>
+						</div>
+						<div id="mck-group-name-sec" class="mck-group-name-sec">
+							<div id="mck-group-name-box" class="mck-row mck-group-name-box">
+								<div id="mck-group-title" class="mck-group-title">Group
+									Title</div>
+							</div>
+						</div>
+						<div id="mck-group-member-panel"
+							class="mck-tab-panel mck-group-member-panel vis">
+							<div class="mck-group-md-sec">
+								<div class="mck-row mck-group-member-text">Members</div>
+								<div id="mck-group-add-member-box"
+									class="mck-row mck-group-admin-options mck-group-add-member-box n-vis">
+									<a id="mck-group-add-member" class="mck-group-add-member"
+										href="#">
+										<div class="blk-lg-3">
+											<img
+												src="css/app/images/mck-icon-add-member.png"
+												alt="Add Member">
+										</div>
+										<div class="blk-lg-9">Add member</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mck-box-body">
+						<div class="mck-tab-cell">
+							<div class="mck-group-member-inner">
+								<ul id="mck-group-member-list"
+									class="mck-group-member-list mck-contact-list mck-nav mck-nav-tabs mck-nav-stacked">
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="mck-group-info-ft" class="mck-group-info-ft">
+						<button type="button" id="mck-btn-group-exit"
+							class="mck-btn mck-btn-blue mck-btn-group-exit"
+							title="Exit Group">Exit Group</button>
 					</div>
 				</div>
 			</div>
@@ -254,10 +326,48 @@
 			</div>
 		</div>
 	</div>
+	<div id="mck-goup-search-box" class="mck-box mck-group-search-box fade"
+		aria-hidden="false">
+		<div class="mck-box-dialog mck-box-sm">
+			<div class="mck-box-content">
+				<div class="mck-box-top mck-row">
+					<div class="blk-lg-3">
+						<img
+							src="css/app/images/mck-icon-add-member.png"
+							alt="Add Member">
+					</div>
+					<div class="blk-lg-7">
+						<h4 class="mck-box-title">Add Member</h4>
+					</div>
+					<div class="blk-lg-2">
+						<button type="button" class="mck-box-close" data-dismiss="mckbox"
+							aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+					</div>
+				</div>
+				<div class="mck-box-body">
+					<div class="mck-form-group">
+						<div class="mck-input-group blk-lg-12">
+							<input id="mck-group-search" type="text" data-provide="typeahead"
+								placeholder="Search..." autofocus /> <span
+								class="mck-search-icon"><a href="#" role="link"
+								class="mck-group-tab-search"><span class="mck-icon-search"></span></a></span>
+						</div>
+					</div>
+					<div class="mck-tab-cell">
+						<div class="mck-message-inner">
+							<ul id="mck-group-search-list"
+								class=" mck-contact-list mck-group-search-list mck-nav mck-nav-tabs mck-nav-stacked"></ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!-- Dummy div as js is dependent on mck-sidebox -->
 	<div id="mck-sidebox"></div>
-
 
 	<script type="text/javascript" src="js/mck-ui-plugins.min.js"></script>
 	<script type="text/javascript" src="js/mck-ui-widget.min.js"></script>

@@ -324,8 +324,8 @@ img.emoji {
 .emoji-menu {
 	position: absolute;
 	z-index: 2244500 !important;
-	width: calc(100% - 30% - 301px);
-	right: 15% !important;
+	width: calc(100% - 601px);
+	right: 150px !important;
 	padding: 0;
 	overflow: hidden;
 	-webkit-box-sizing: border-box;
@@ -334,9 +334,9 @@ img.emoji {
 	height: 260px;
 }
 
-.apz-panel-3 .emoji-menu {
-	width: calc(100% - 703px);
-	right: 352px !important;
+.mck-panel-3.emoji-menu, .mck-panel-3 .emoji-menu  {
+	width: calc(100% - 902px);
+	right: 451px !important;
 }
 
 .emoji-menu>div {
@@ -425,14 +425,15 @@ img.emoji {
 
 .emoji-menu .group-selector a {
 	text-decoration: none;
-	padding: 0px 50.5px;
+	padding: 0px 61.5px;
 	height: 50px !important;
 	border: none;
 	background-color: transparent;
 }
 
-.apz-panel-3 .emoji-menu .group-selector a {
-	padding: 0px 51.3px;
+.mck-panel-3.emoji-menu .group-selector a, 
+.mck-panel-3 .emoji-menu .group-selector a  {
+	padding: 0px 31.4px;
 }
 
 .emoji-menu .group-selector a li div {

@@ -2,7 +2,6 @@
     Created on : Mar 20, 2015, 5:28:06 PM
     Author     : devashish
 */
-
 .mck-box {
 	position: fixed;
 	top: 0;
@@ -45,7 +44,7 @@
 	margin-left: -15px;
 }
 
-.mck-box * {
+* {
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
@@ -54,13 +53,13 @@
 	font-weight: inherit;
 }
 
-.mck-box *:before, *:after {
+.mck-container *:before, *:after {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
-.mck-box .mck-caret {
+.mck-caret {
 	display: inline-block;
 	width: 0;
 	height: 0;
@@ -159,10 +158,6 @@
 .mck-box-open .mck-box, .mck-box-open .mck-box {
 	overflow-x: hidden;
 	overflow-y: auto;
-}
-
-.mck-box div, .mck-box .mck-box-title {
-	font-family: Heslvetica Neue, Helvetica, Arial, sans-serif !important;
 }
 
 .mck-sidebox .mck-box-title {
@@ -804,18 +799,18 @@ a:hover {
 	border-color: #398439;
 }
 
-.mck-box ol, .mck-box ul {
+ol,  ul {
 	margin-top: 0;
 	margin-bottom: 10px;
 }
 
-.mck-box .mck-nav {
+.mck-nav {
 	padding-left: 0;
 	margin-bottom: 0;
 	list-style: none;
 }
 
-.mck-box  .mck-nav-tabs {
+.mck-nav-tabs {
 	border-bottom: 1px solid #ddd;
 }
 
@@ -835,41 +830,41 @@ a:hover {
 	content: " ";
 }
 
-.mck-box  .btn-group-vertical>.btn-group:after, .mck-box  .btn-toolbar:after,
+.btn-group-vertical>.btn-group:after,.btn-toolbar:after,
 	.mck-box  .clearfix:after, .mck-box .container-fluid:after, .mck-box .container:after,
 	.mck-box .dl-horizontal dd:after, .mck-box .form-horizontal .mck-form-group:after,
 	.mck-sidebox-ft :after, .mck-box .nav:after, .mck-box  .navbar-collapse:after,
 	.mck-box  .navbar-header:after, .mck-box  .navbar:after, .mck-sidebox  .pager:after,
-	.mck-box  .panel-body:after, .mck-box  .mck-row:after {
+	.mck-box  .panel-body:after, .mck-row:after {
 	clear: both;
 }
 
-.mck-box .mck-nav>li {
+.mck-nav>li {
 	position: relative;
 	display: block;
 }
 
-.mck-box  .mck-nav-tabs>li {
+.mck-nav-tabs>li {
 	float: left;
 }
 
-.mck-box .mck-nav-stacked>li {
+.mck-nav-stacked>li {
 	float: none;
 }
 
-.mck-box .mck-nav>li>a {
+.mck-nav>li>a {
 	position: relative;
 	display: block;
 	padding: 10px 15px;
 }
 
-.mck-box .mck-nav-tabs>li>a {
+.mck-nav-tabs>li>a {
 	line-height: 1.42857143;
 	border: 1px solid transparent;
 	border-radius: 4px 4px 0 0;
 }
 
-.mck-box .mck-contact-list {
+.mck-contact-list {
 	margin: 0 !important;
 	background-color: white;
 	border-bottom: none;
@@ -899,17 +894,17 @@ a:hover {
 	min-height: 1px;
 }
 
-.mck-box .mck-contact-list li {
+.mck-contact-list li {
 	float: left;
 	width: 100%;
 }
 
-.mck-box .mck-contact-list .mck-row, .mck-msg-preview .mck-row {
+.mck-contact-list .mck-row, .mck-msg-preview .mck-row {
 	margin: 0;
 	text-align: left !important;
 }
 
-.mck-box .mck-contact-list .mck-conversation-topic {
+.mck-contact-list .mck-conversation-topic {
 	min-height: 15px;
 	text-align: left;
 	font-size: 12px;
@@ -920,7 +915,7 @@ a:hover {
 	overflow: hidden;
 }
 
-.mck-box .mck-contact-list li a, .mck-sidebox .mck-group-member-list li a
+.mck-contact-list li a, .mck-sidebox .mck-group-member-list li a
 	{
 	color: #444 !important;
 	border-radius: 0;
@@ -1081,7 +1076,7 @@ a:hover {
 	background-color: #f5f5f5 !important;
 }
 
-.mck-box .mck-contact-list li:last-child a, .mck-sidebox .mck-group-member-list li:last-child .mck-group-member-info
+.mck-contact-list li:last-child a, .mck-group-member-list li:last-child .mck-group-member-info
 	{
 	border-bottom: 0 !important;
 }
@@ -1096,7 +1091,7 @@ a:hover {
 	float: left;
 }
 
-.mck-sidebox .mck-box-body {
+.mck-container .mck-box-body {
 	padding: 0;
 	position: relative;
 	display: table-row;
@@ -1129,6 +1124,7 @@ a:hover {
 
 .mck-group-search-box .mck-box-body .mck-message-inner {
 	height: 300px;
+	background-color:#fff;
 }
 
 .mck-box-body .mck-msg-w-panel {
@@ -1590,6 +1586,8 @@ a:hover {
 }
 
 .alpha_D .mck-contact-icon {
+	top: -1px;
+	left: 1px;
 	position: relative;
 }
 
@@ -1744,7 +1742,7 @@ a:hover {
 	vertical-align: middle;
 }
 
-.mck-box .mck-nav>li>a:hover {
+.mck-nav>li>a:hover {
 	background-color: #fff;
 }
 
@@ -1962,8 +1960,8 @@ a:hover {
 
 .mck-contact-list li a .blk-lg-3 img, .mck-group-member-list li .blk-lg-3 img
 	{
-	height: 50px;
-	width: 50px;
+	height: 40px;
+	width: 40px;
 	border-radius: 110px;
 }
 
@@ -2123,8 +2121,8 @@ a:hover {
 	margin: 7px 0 0;
 }
 
-.mck-box .mck-nav-tabs>li.active>a, .mck-box .mck-nav-tabs>li.active>a:focus,
-	.mck-box .mck-nav-tabs>li.active>a:hover {
+.mck-nav-tabs>li.active>a, .mck-nav-tabs>li.active>a:focus,
+	.mck-nav-tabs>li.active>a:hover {
 	color: #555;
 	cursor: default;
 }
@@ -2145,7 +2143,7 @@ a:hover {
 	border-bottom: 5px solid #168EEA;
 }
 
-.mck-box .mck-nav>li>a:focus, .mck-box .mck-nav>li>a:hover {
+.mck-nav>li>a:focus, .mck-nav>li>a:hover {
 	text-decoration: none;
 }
 
@@ -2431,9 +2429,8 @@ a:hover {
 
 .mck-group-name-sec {
 	position: relative;
-	padding: 15px 10px;
+	padding-bottom:10px;
 	padding-top: 0px;
-	position: relative;
 }
 
 .mck-group-name-sec .mck-group-title {
@@ -2453,7 +2450,6 @@ a:hover {
 }
 
 .mck-group-md-sec {
-	padding: 0 10px;
 	padding-top: 0px;
 	position: relative;
 }
@@ -2546,8 +2542,8 @@ a:hover {
 	padding: 10px;
 }
 
-.mck-sidebox .mck-btn-group-exit {
-	width: 260px;
+.mck-btn-group-exit {
+	width: 280px;
 }
 
 .mck-icon-user, .mck-icon-no-image, .mck-icon-loading, .mck-icon-bell,
@@ -2558,7 +2554,7 @@ a:hover {
 	.mck-icon-camera, .mck-icon-marker, .mck-icon-delivered, .mck-icon-read,
 	.mck-icon-sent, .mck-icon-time {
 	display: inline-block;
-	    background: url(images/mck-plugin-sprite.png) no-repeat;
+	background: url(images/mck-plugin-sprite.png) no-repeat;
 	overflow: hidden;
 	text-indent: -9999px;
 	text-align: left;
@@ -2631,7 +2627,7 @@ a:hover {
 }
 
 .mck-icon-search {
-	background-position: -10px -478px;
+	background-position: -10px -480px;
 	width: 24px;
 	height: 24px;
 	vertical-align: middle;
@@ -2763,7 +2759,7 @@ a:hover {
 		width: 1200px;
 		margin: 60px auto;
 	}
-	.mck-box  .blk-lg-1, .mck-box  .blk-lg-10, .mck-box  .blk-lg-11,
+	.blk-lg-1, .mck-box  .blk-lg-10, .mck-box  .blk-lg-11,
 		.mck-box  .blk-lg-12, .mck-box  .blk-lg-2, .mck-box  .blk-lg-3,
 		.mck-box  .blk-lg-4, .mck-box  .blk-lg-5, .mck-box  .blk-lg-6,
 		.mck-box  .blk-lg-7, .mck-box  .blk-lg-8, .mck-box  .blk-lg-9,
@@ -2872,7 +2868,7 @@ a:hover {
 
 @media ( min-width : 1200px) {
 	.mck-box .mck-box-sm {
-		width: 600px;
+		width: 300px;
 	}
 }
 
@@ -2882,6 +2878,3 @@ a:hover {
 	position: absolute;
 	bottom: 12px;
 }
-
-
-
