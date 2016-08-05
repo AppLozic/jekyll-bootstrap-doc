@@ -733,6 +733,7 @@ a:hover {
 
 .mck-group-search-box .mck-box-body {
 	padding: 10px;
+	padding-top :0;
 }
 
 .mck-top-btn-panel {
@@ -1884,7 +1885,7 @@ ol,  ul {
 }
 
 .mck-group-search-box input {
-	width: 245px;
+	width: 255px;
 }
 
 .mck-loc-box input {
@@ -2397,10 +2398,10 @@ ol,  ul {
 }
 
 .mck-group-icon-box img {
-	width: 90%;
-	margin-left: 5%;
-	margin-right: 5%;
-	height: 100%;
+	width: 100%;
+    height: 100%;
+    border-radius: 110px;
+    border: 1px solid #ddd;
 }
 
 .mck-group-icon-sec .mck-group-icon-box {
@@ -2433,14 +2434,89 @@ ol,  ul {
 	padding-top: 0px;
 }
 
+.mck-group-name-sec .blk-lg-9 {
+	width: 249px;
+	padding: 0 5px;
+	background-color: #fff;
+	height: 35px;
+	border-radius: 4px;
+	border-bottom-right-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+.mck-group-name-sec .blk-lg-3 {
+	width: 30px;
+}
+
+.mck-group-name-sec .mck-group-name-edit-icon {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1;
+	color: #555;
+	background-color: #fff;
+	text-align: center;
+	border-left: 0px;
+	border: 0;
+	border-radius: 4px;
+	border-bottom-left-radius: 0px;
+	border-top-left-radius: 0px;
+	float: left;
+	white-space: nowrap;
+	vertical-align: middle;
+	display: table-cell;
+	text-align: center;
+	border-bottom-left-radius: 0px;
+	border-top-left-radius: 0px;
+}
+
+.mck-group-name-sec div[contenteditable="true"] {
+	height: 30px;
+	width: 240px;
+	font-size: 13px;
+	color: #555;
+	outline: none;
+	overflow: hidden;
+	background-color: #fff;
+	border-bottom: 2px solid #009688 !important;
+	background-image: none;
+	border: 0;
+	position: relative;
+	z-index: 2;
+	float: left;
+	margin-bottom: 0;
+	display: table-cell;
+	background-color: #fff;
+}
+
+.mck-box .mck-group-name-sec .mck-req-border {
+	border-bottom: 2px solid #EB5858 !important;
+}
+
+.mck-group-name-edit-icon img {
+	width: 24px;
+	height: 24px;
+	margin-top: -4px;
+	vertical-align: middle;
+	margin-left: 2px;
+}
+
 .mck-group-name-sec .mck-group-title {
 	background: #FFFFFF;
-	border-radius: 4px;
 	vertical-align: middle;
-	line-height: 30px;
+	line-height: 35px;
 	text-align: center;
 	font-weight: 500;
 	font-size: 14px;
+	border-top-right-radius: 0;
+}
+
+.mck-group-name-sec a {
+	border-left: 1px solid #ddd;
+	line-height: 35px;
+}
+
+.mck-group-name-sec a.vis {
+	display: initial !important;
 }
 
 .mck-group-member-panel {
