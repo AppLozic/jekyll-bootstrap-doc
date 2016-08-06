@@ -457,20 +457,24 @@
            };
      $('#' + elemId).readme(options).then(function(){
        appendClipboard(elemId);
+       anchors.add('#' + elemId + ' h1, #' + elemId + ' h2, #' + elemId + ' h3' + ', #' + elemId + ' h4' + ', #' + elemId + ' h5');
+
        completed++;
        if (completed >= calls) {
-         buildSideMenu();
+           buildSideMenu();
+           scrollToHash();
        }
+     });
+   }
 
-       anchors.add('#' + elemId + ' h1, #' + elemId + ' h2, #' + elemId + ' h3' + ', #' + elemId + ' h4' + ', #' + elemId + ' h5');
+   function scrollToHash() {
        var hash = location.hash.replace('#','');
 
-         if(hash != '') {
-            if ($('#' + hash)) {
-               $('html, body').animate({ scrollTop: $('#' + hash).offset().top}, 1000);
-            }
-          }
-     });
+       if(hash != '') {
+         if ($('#' + hash)) {
+           $('html, body').animate({ scrollTop: $('#' + hash).offset().top}, 1000);
+         }
+       }
    }
 
    function initChat(userId, displayName) {
@@ -500,11 +504,11 @@
 			onInit: function(response) {
 					loggedIn = true;
 					 if (firstTimeUser) {
-                            $applozic.fn.applozic('addMessageToInbox', {'sender': 'applozic', 'messageContent' : welcomeMessage});
-                        }
+             $applozic.fn.applozic('addMessageToInbox', {'sender': 'applozic', 'messageContent' : welcomeMessage});
+          }
 					if (response == "success") {
 						//$applozic.fn.applozic('loadTab', 'applozic');
-            $(this).scrollTop(0);
+            scrollToHash();
 					}
 				}
 			});
