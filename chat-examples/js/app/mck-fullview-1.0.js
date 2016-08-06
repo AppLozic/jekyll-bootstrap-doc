@@ -1627,7 +1627,7 @@ var MCK_CLIENT_GROUP_MAP = [];
 												mckGroupService
 														.removeGroupMember({
 															'groupId' : groupId,
-															'userId' : userId, 
+															'userId' : userId,
 															'apzCallback' :mckGroupLayout.onRemovedGroupMember
 														});
 											}
@@ -7216,7 +7216,7 @@ var MCK_CLIENT_GROUP_MAP = [];
 							|| messageType === "MESSAGE_RECEIVED") {
 						var messageArray = [];
 						messageArray.push(message);
-						if (mckStorage.getMckMessageArray().length > 0) {
+						if (mckStorage.getMckMessageArray() !== null && mckStorage.getMckMessageArray().length > 0) {
 							mckStorage.updateMckMessageArray(messageArray);
 						}
 						var contact = (message.groupId) ? mckGroupUtils
