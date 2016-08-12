@@ -1763,6 +1763,7 @@ ol,  ul {
 }
 
 .mck-sidebox-launcher {
+	display: none;
 	white-space: pre;
 	position: fixed;
 	z-index: 2243000;
