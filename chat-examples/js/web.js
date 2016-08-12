@@ -34,8 +34,8 @@ $(document).ready(function() {
     var topicBoxEnabled = true;
     topicBoxEnabled = false;
 
-    var displayName = '';
-    displayName = '${param.displayName}';
+    /*var displayName = '';
+    displayName = '${param.displayName}';*/
 
     function onInitialize(status) {
       if (status === 'success') {
@@ -53,31 +53,14 @@ $(document).ready(function() {
       // appId: appKey,
       appId: 'applozic-sample-app',
       // email:'userEmail',
-      contactNumber: userContactNumber,
       accessToken: userPassword,
       desktopNotification: true,
       swNotification: true,
       olStatus: true,
       onInit: onInitialize,
-      userName: displayName,
       locShare: true,
-      //  loadOwnContacts: true,
       googleApiKey: 'AIzaSyDKfWHzu9X7Z2hByeW4RRFJrD9SizOzZt4',
       launchOnUnreadMessage: true,
-      // hideGroupSubtitle :true,
-      // launchOnNewMessage:true,
-      // topicHeader: true,
-      // maxGroupSize:2,
-      // checkUserBusyWithStatus:true,
-      displayText: function() {
-        return { onBusyWithOtherUser: 'User is Busy right now!' }
-      },
-      /* onTabClicked : function(tabDetail) {
-                                if(typeof tabDetail === 'object') {
-                                        console.log(tabDetail.tabId  + " " +
-         tabDetail.isGroup);
-                                        }
-                        }, */
       topicBox: topicBoxEnabled,
       authenticationTypeId: 1
       // topicDetail: function(topicId) {}
