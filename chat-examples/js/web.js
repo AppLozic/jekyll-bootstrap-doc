@@ -32,7 +32,6 @@ $(document).ready(function() {
     var userContactNumber = $contactNumber.val();
     var userPassword = $password.val();
     var topicBoxEnabled = true;
-    topicBoxEnabled = false;
 
     /*var displayName = '';
     displayName = '${param.displayName}';*/

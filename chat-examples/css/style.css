@@ -62,6 +62,9 @@ body {
 	background-clip: padding-box;
 	height: 100%;
 }
+.mck-text-right {
+	text-align:right;
+}
 
 .mck-container .left .top {
 	width: 100%;
@@ -86,7 +89,7 @@ body {
 
 .mck-container .left input {
 	float: left;
-	width: 240px;
+	width: 238px;
 	height: 40px;
 	padding: 0 10px;
 	border: 1px solid #e6e6e6;
@@ -152,8 +155,8 @@ body {
 
 .mck-container .left .people .person img {
 	float: left;
-	width: 40px;
-	height: 40px;
+	width: 43px;
+	height: 43px;
 	margin-right: 12px;
 	border-radius: 50%;
 }
@@ -262,17 +265,18 @@ body {
 .mck-tab-individual .blk-lg-8 {
 	width: calc(100% - 50px);
 }
-
 .mck-tab-individual .mck-menu-item:last-child {
 	text-align: right;
 	margin-top: 9px;
 	margin-bottom: 9px;
+	height: 30px;
 }
 
 .mck-menu-item .mck-menu-icon {
 	height: 30px;
 	width: 30px;
 	cursor: pointer;
+	vertical-align: middle;
 }
 
 .mck-container .right .chat {
@@ -524,6 +528,7 @@ body {
 	background-color: #ffdfdf;
 	color: #885e5e;
 	padding: 5px 8px;
+    margin:0 0 10px;
 	border: 1px solid #ffcfcf;
 	font-size: 12px !important;
 	text-align: center;
@@ -577,12 +582,4 @@ body {
 
 .mck-group-icon-sec {
 	padding-bottom: 10px;
-}
-
-.vertical-center {
-  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-  min-height: 100vh; /* These two lines are counted as one :-)       */
-
-  display: flex;
-  align-items: center;
 }
