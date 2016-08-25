@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{page.htmlTitle}}</title>
+  <meta  property="og:title" content="Applozic - Chat and Messaging SDK Documentation">
+  <meta name="description" content="Applozic is the reliable, secure and best CHAT and MESSAGING SDK, enables you to add messaging in just few minutes on your android, iOS, phonegap, ionic and web apps.">
+  <meta property="og:description" content="Chat and Messaging SDK Documentation">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Applozic">
+  <meta name="keyword"  content="Applozic,open,chat,API,instant,messaging,best,develop,sdk,android,ios,phonegap,web,plugin,solution,website,platform,in-app,messaging,messenger,integration,client,developers,real-time,docs,async,application,in-app-messaging,features,android-chat-sdk,
+  android-web-plugin,instant-messaging-app,application-like-WhatsApp,chat-integration">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="{{site.github.url}}/assets/font-awesome/css/font-awesome.min.css">
+
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{site.github.url}}/assets/css/docs.min.css" rel="stylesheet">
+  <link href="{{site.github.url}}/assets/css/style.css" rel="stylesheet">
+  <link href="{{site.github.url}}/assets/css/applozic.css" rel="stylesheet">
+  <style>
+    #content {
+    /*  background:{{site.header.color1}};
+      background:linear-gradient(135deg, {{site.header.color1}}, {{site.header.color2}});*/
+      background-image: url('{{site.github.url}}/assets/images/main-background.jpg');
+    }
+
+    {% if page.isHome %}
+      body {
+        background-color: whitesmoke;
+      }
+
+      #content:after {
+        background:linear-gradient(135deg, transparent 50px, whitesmoke 50px);
+      }
+    {% endif %}
+  </style>
+<!--
+  <link href="{{site.github.url}}/developers/css/portfolio.css" rel="stylesheet">
+-->
+
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<!--  <script type="text/javascript" language="JavaScript" src="{{site.github.url}}/assets/js/jquery.i18n.properties.min.js"></script>
+-->
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.3.0/bootbox.min.js"></script>
+  <script src="{{site.github.url}}/assets/js/docs.min.js"></script>
+
+  <script src="{{site.github.url}}/assets/js/anchor.min.js"></script>
+
+  <!-- Json2html -->
+  <script src="{{site.github.url}}/developers/js/json2html.js"></script>
+  <script src="{{site.github.url}}/developers/js/jquery.json2html.js"></script>
+
+
+</head>
+
+<body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.6&appId=1715739875381241";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+  <!-- Main navigation
+  =========================================== -->
+  <header class="navbar navbar-static-top bs-docs-nav" id="top">
+    <div class="container">
+      <div class="navbar-header" role="banner">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a id="brand-menu" class="navbar-brand" href="{{site.github.url}}/index.html">
+          <img src="{{site.github.url}}/assets/images/applozic_transparent.png" />
+        </a>
+      </div>
+      <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+        <ul class="nav navbar-nav">
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          {% assign sorted_pages = site.pages | sort:"order" %}
+          {% for p in sorted_pages %}
+            {% if p.isHome != true and p.hide != true and p.title !=  %}
+            <li {% if page.title == p.title %}class="active"{% endif %}>
+              <a href="{{site.github.url}}{{p.url}}">{{p.title}}</a>
+            </li>
+            {% endif %}
+          {% endfor %}
+
+          <li>
+            <a class="" href="https://www.applozic.com/signin.html">SignIn</a>
+          </li>
+          <li>
+            <a class="header-link btn btn-signup" href="https://www.applozic.com/signup.html" onclick="_gaq.push(['_trackEvent', 'Click', 'Signup', 'From_Docs_Header']);">SignUp For Free</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- Header
+  =========================================== -->
+
+
+  <div class="container bs-docs-container">
+    <div class="row">
+      <!-- Content
+      =========================================== -->
+
+    {% if page.isHome %}
+        <div class="col-md-9" role="main">
+    {% endif %}
+
+		{% if page.isHome == false %}
+      <div class="docs-main-section col-md-9" role="main">
+
+        <section class="bs-docs-section">
+    		  <h1 id="first-level" class="page-header">Overview</h1>
+    		  <p>{{page.overview}}</p>
+          <div class="row">
+            <div class="col-md-4 col-sm-12 col-xs-12">
+              <img src="{{site.github.url}}/assets/images/chat-android.png" />
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+              <img src="{{site.github.url}}/assets/images/cartrade1.png" />
+            </div>
+          </div>
+
+    		</section>
+
+		{% endif %}
+
+        {{content}}
+
+
+        {% if page.isHome == false %}
+
+        <section class="bs-docs-section">
+          <h1 id="github" class="page-header">Github</h1>
+              <div id="github-doc">
+                        <ul class="bs-docs-social-buttons">
+                        <li>
+
+
+                      <iframe class="github-btn btn-md-outline" src="https://ghbtns.com/github-btn.html?user={{site.githubButton.user}}&amp;repo={{page.github}}&amp;type=watch&amp;count=true" width="90" height="20" title="Star on GitHub"></iframe>
+                      </li>
+
+                      <li>
+
+                      <iframe class="github-btn btn-md-outline" src="https://ghbtns.com/github-btn.html?user={{site.githubButton.user}}&amp;repo={{page.github}}&amp;type=fork&amp;count=true" width="90" height="20" title="Fork on GitHub"></iframe>
+                      </li>
+
+                      </ul>
+              </div>
+        </section>
+
+		{% endif %}
+
+      </div>
+
+      <!-- Page navigation
+      =========================================== -->
+      <div class="col-md-3" role="complementary">
+        <div class="bs-docs-sidebar hidden-print">
+          <ul class="nav bs-docs-sidenav">
+          </ul>
+          <a class="back-to-top" href="#top">
+            <i class="glyphicon glyphicon-chevron-up"></i> Back to top
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer
+  =========================================== -->
+  <footer class="bs-docs-footer" role="contentinfo">
+    <div class="container">
+      <div class="bs-docs-social">
+        <ul class="bs-docs-social-buttons">
+         {% if page.isHome and site.githubButton.user and site.githubButton.repo %}
+          <li>
+            <iframe class="github-btn" src="https://ghbtns.com/github-btn.html?user={{site.githubButton.user}}&amp;repo={{page.githubButton.repo}}&amp;type=watch&amp;count=true" width="90" height="20" title="Star on GitHub"></iframe>
+          </li>
+        {% endif %}
+        {% if site.githubButton.user and page.github %}
+          <li>
+            <iframe class="github-btn" src="https://ghbtns.com/github-btn.html?user={{site.githubButton.user}}&amp;repo={{page.github}}&amp;type=watch&amp;count=true" width="90" height="20" title="Star on GitHub"></iframe>
+          </li>
+          <li>
+            <iframe class="github-btn" src="https://ghbtns.com/github-btn.html?user={{site.githubButton.user}}&amp;repo={{page.github}}&amp;type=fork&amp;count=true" width="90" height="20" title="Fork on GitHub"></iframe>
+          </li>
+        {% endif %}
+        {% if site.twitter.enabled %}
+          <li>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="{{site.github.url}}" data-count="horizontal" data-via="{{site.twitter.via}}" data-text="{{site.name}}" data-hashtags="{{site.twitter.hash}}">Tweet</a>
+          </li>
+        {% endif %}
+        {% if site.twitter.account %}
+          <li>
+            <a href="https://twitter.com/{{site.twitter.account}}" class="twitter-follow-button" data-show-count="true">Follow @{{site.twitter.account}}</a>
+          </li>
+        {% endif %}
+        {% if site.facebook.enabled %}
+          <li>
+            <div class="fb-like" data-href="{{site.github.url}}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+          </li>
+        {% endif %}
+        {% if site.facebook.profileUrl %}
+          <li>
+            <div class="fb-follow" data-href="{{site.facebook.profileUrl}}" data-layout="button_count" data-show-faces="false"></div>
+          </li>
+        {% endif %}
+        </ul>
+      </div>
+
+      <p>
+        Licensed under <a href="{{site.licenseUrl}}" target="_blank">{{site.license}}</a>,
+        documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+      </p>
+      <p>
+        Documentation template by <a href="https://www.applozic.com">Applozic team</a>,
+        generated with <a href="https://github.com/AppLozic/jekyll-bootstrap-doc">Jekyll Bootstrap Doc</a>
+      </p>
+
+      <ul class="bs-docs-footer-links muted">
+      {% if page.showDownload %}
+      <li>Currently v{{page.version}}</li>
+      {% endif %}
+      {% for p in page.footerLinks %}
+        <li>&middot;</li>
+        <li><a href="{{p.url}}">{{p.title}}</a></li>
+      {% endfor %}
+      </ul>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <script src="{{site.github.url}}/assets/js/clipboard.min.js"></script>
+
+
+  <!-- Applozic scripts
+ =========================================== -->
+	<script>
+
+	var userId, displayName = "";
+	var loggedIn = false;
+	var firstTimeUser = false;
+	var welcomeMessage = "Welcome to Applozic, may I know your name and company name?";
+
+    $(document).ready(function(){
+      //anchors.options.visible = 'always';
+      //icon: '¶'
+      anchors.options = {
+          placement: 'left',
+          visible: 'always'
+        };
+
+    	userId = (typeof localStorage !== 'undefined') ?  localStorage.getItem('mckLoginId') : "";
+
+    	if (userId == "" || userId == null) {
+	    	if ($.cookie("mckUserId")) {
+	            userId = $.cookie("mckUserId");
+	        }
+          if (userId == "" || userId == null) {
+	            userId = getRandomId();
+	            firstTimeUser = true;
+	            $.cookie("mckUserId", userId);
+	        }
+    	}
+
+        initChat(userId, displayName);
+
+		$(document).on('click', "#chat-help", function(e) {
+			e.preventDefault();
+			initChat(userId, displayName);
+		});
+
+		 $('[data-spy="scroll"]').each(function () {
+			var $spy = $(this).scrollspy('refresh');
+		});
+
+   });
+
+
+   var calls = 0;
+   var completed = 0;
+
+   function scrollToHash() {
+       var hash = location.hash.replace('#','');
+
+       if(hash != '') {
+         if ($('#' + hash)) {
+           $('html, body').animate({ scrollTop: $('#' + hash).offset().top}, 1000);
+         }
+       }
+   }
+
+   function initChat(userId, displayName) {
+   		if (loggedIn) {
+			$applozic.fn.applozic('loadTab', 'applozic');
+			return;
+		}
+		 (function(d, m){var s, h;
+			   s = document.createElement("script");
+			   s.type = "text/javascript";
+			   s.async=true;
+			   s.src="https://apps.applozic.com/sidebox.app";
+			   h=document.getElementsByTagName('head')[0];
+			   h.appendChild(s);
+			   window.applozic=m;
+			   m.init=function(t){m._globals=t;}})(document, window.applozic || {});
+
+		window.applozic.init({appId: 'applozic-sample-app', userId: userId, userName: displayName,
+			desktopNotification: true,  notificationIconLink: 'https://www.applozic.com/favicon.ico',
+			mode: "support",
+			supportId: "applozic",
+			contactDisplayName: function(contactId) {
+				if (contactId == "applozic") {
+					return "Applozic Help";
+				}
+			},
+			onInit: function(response) {
+					loggedIn = true;
+					 if (firstTimeUser) {
+             $applozic.fn.applozic('addMessageToInbox', {'sender': 'applozic', 'messageContent' : welcomeMessage});
+          }
+					if (response == "success") {
+            scrollToHash();
+					}
+				}
+			});
+
+	}
+
+	function getRandomId() {
+		var text = "";
+		var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+		for (var i = 0; i < 10; i++) {
+			text += possible.charAt(Math.floor(Math.random() * possible.length));
+		}
+        return text;
+	}
+
+</script>
+ <!-- Applozic scripts
+  =========================================== -->
+
+
+  <!-- Async scripts
+  =========================================== -->
+  {% if site.twitter.enabled or site.twitter.account %}
+  <script>
+    window.twttr = (function (d,s,id) {
+      var t, js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return; js=d.createElement(s); js.id=id; js.async=1;
+      js.src="https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+      return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+    }(document, "script", "twitter-wjs"));
+  </script>
+  {% endif %}
+
+  {% if site.analytics.account and site.analytics.domain %}
+  <script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+
+    ga('create', '{{site.analytics.account}}', 'auto');
+    ga('send', 'pageview');
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', '{{site.analytics.account}}']);
+    _gaq.push(['_setDomainName', '{{site.analytics.domain}}']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+  </script>
+  {% endif %}
+
+</body>
+</html>
