@@ -188,9 +188,7 @@ table>tbody>tr:nth-of-type(odd) {
 .cards-section .item-ionic .item-inner .fa{
    color: #58bbee;
 }
-.cards-section .center{
-  margin-left:389px;
-}
+
 .cards-section .item-configuration .item-inner {
     border-top: 3px solid #F88C30;
 }
