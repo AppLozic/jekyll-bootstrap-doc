@@ -144,8 +144,8 @@ body {
 .mck-alpha-contact-image {
 	cursor: pointer;
 	float: left;
-	width: 40px;
-	height: 40px;
+	width: 43px;
+	height: 43px;
 	margin-right: 12px;
 	border-radius: 50%;
 	font-size: 25px;
@@ -265,13 +265,6 @@ body {
 .mck-tab-individual .blk-lg-8 {
 	width: calc(100% - 50px);
 }
-.mck-tab-individual .mck-menu-item:last-child {
-	text-align: right;
-	margin-top: 9px;
-	margin-bottom: 9px;
-	height: 30px;
-}
-
 .mck-menu-item .mck-menu-icon {
 	height: 30px;
 	width: 30px;

@@ -1582,7 +1582,7 @@ ol,  ul {
 .mck-alpha-contact-image .mck-contact-icon {
 	font-weight: bold;
 	vertical-align: middle;
-	    height: 43px;
+	height: 43px;
     line-height: 43px;
     display: block;
 }
@@ -2471,12 +2471,14 @@ ol,  ul {
 }
 
 .mck-group-name-sec div[contenteditable="true"] {
-	height: 30px;
-	width: 240px;
+	height: 32px;
+	line-height:inherit;
+	width: 100%;
 	font-size: 13px;
 	color: #555;
 	outline: none;
-	overflow: hidden;
+	overflow: auto;
+	overflow-x :hidden;
 	background-color: #fff;
 	border-bottom: 2px solid #009688 !important;
 	background-image: none;
@@ -2487,6 +2489,8 @@ ol,  ul {
 	margin-bottom: 0;
 	display: table-cell;
 	background-color: #fff;
+	white-space: inherit;
+    text-overflow: inherit;
 }
 
 .mck-box .mck-group-name-sec .mck-req-border {
@@ -2502,13 +2506,16 @@ ol,  ul {
 }
 
 .mck-group-name-sec .mck-group-title {
-	background: #FFFFFF;
+    background: #FFFFFF;
 	vertical-align: middle;
-	line-height: 35px;
+	line-height: 32px;
 	text-align: center;
 	font-weight: 500;
 	font-size: 14px;
 	border-top-right-radius: 0;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .mck-group-name-sec a {
