@@ -365,8 +365,15 @@
     </div>
   </footer>
 
-  <script type="text/javascript" language="JavaScript" src="{{site.github.url}}/assets/js/readmecache.js"></script>
-	<script src="{{site.github.url}}/assets/js/jquery-gh/jquery.gh-readme.js"></script>
+  <script type="text/javascript">
+    var README_DATA = new Object();
+  </script>
+
+  {% if page.isHome == false %}
+    <script type="text/javascript" language="JavaScript" src="{{site.github.url}}/assets/js/readme/{{page.github}}.js"></script>
+  {% endif %}
+
+  <script src="{{site.github.url}}/assets/js/jquery-gh/jquery.gh-readme.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
   <script src="{{site.github.url}}/assets/js/clipboard.min.js"></script>
