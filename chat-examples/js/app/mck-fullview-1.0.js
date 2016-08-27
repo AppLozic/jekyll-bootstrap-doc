@@ -958,6 +958,11 @@ var MCK_CLIENT_GROUP_MAP = [];
                             return false;
                         }
                     } else if (e.keyCode === 13) {
+                        //Custom code for fixing at.js plugin.
+                        if ($applozic(".atwho-view:visible").length > 0) {
+                          return;
+                        }
+
                         e.preventDefault();
                         if (MCK_TYPING_STATUS === 1) {
                             mckInitializeChannel.sendTypingStatus(0, mckMessageLayout.getMckMessageInner().data('mck-id'));

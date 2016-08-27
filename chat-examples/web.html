@@ -7,6 +7,7 @@
 	<link href="css/app/mck-fullview-1.0.css" rel="stylesheet">
 
 	<!-- Custom JS -->
+  <link href="lib/at/css/jquery.atwho.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 	<style>
 		#chat {
@@ -25,7 +26,6 @@
 			jQuery = $original;
 		}
 	</script>
-	<script src="js/jquery-2.2.2.min.js"></script>
 	<link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
 
 	<meta charset="utf-8">
@@ -40,6 +40,10 @@
 	<!-- <jsp:include page="sections/headtag.jsp" />
 	<script type="text/javascript" src="${staticPath}/lib/js/base-lib-script.min.js"></script> -->
 	<!-- Custom Theme JavaScript -->
+  <script src="js/jquery-2.2.2.min.js"></script>
+  <script src="lib/caret/jquery.caret.min.js"></script>
+  <script src="lib/at/js/jquery.atwho.min.js"></script>
+
 
 	<script type="text/javascript" src="js/mck-ui-plugins.min.js"></script>
 	<script type="text/javascript" src="js/mck-ui-widget.min.js"></script>
@@ -324,7 +328,9 @@
   										</div>
   										<a href="#" id="mck-file-up2" type="button"
   											class="write-link attach n-vis mck-file-upload mck-btn-text-panel"
-  											title="Attach File"> </a> <span id="mck-text-box"
+  											title="Attach File"> </a>
+                        
+                        <span id="mck-text-box"
   											contenteditable="true" class="mck-text-box mck-text required"></span>
 
   										<a href="#" type="button" id="mck-btn-smiley"
