@@ -3275,8 +3275,8 @@ var MCK_CLIENT_GROUP_MAP = [];
                 var currentTabId = $mck_msg_inner.data('mck-id');
                 var htmlId = (typeof contact !== 'undefined') ? contact.htmlId : mckContactUtils.formatContactId(tabId);
                 var contactIdExpr = (isGroup) ? 'group-' + htmlId : 'user-' + htmlId;
-                $applozic("#li-" + contHtmlExpr + " .mck-cont-msg-wrapper").html('');
-                $applozic("#li-" + contHtmlExpr + " .time").html('');
+                $applozic("#li-" + contactIdExpr + " .mck-cont-msg-wrapper").html('');
+                $applozic("#li-" + contactIdExpr + " .time").html('');
                 if (currentTabId === tabId) {
                     $mck_msg_inner.html("");
                     $mck_msg_cell.removeClass('n-vis').addClass('vis');
