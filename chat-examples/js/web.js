@@ -62,7 +62,8 @@ $(document).ready(function() {
       googleApiKey: 'AIzaSyDKfWHzu9X7Z2hByeW4RRFJrD9SizOzZt4',
       launchOnUnreadMessage: true,
       topicBox: topicBoxEnabled,
-      authenticationTypeId: 1
+      authenticationTypeId: 1,
+      initAutoSuggestions : initAutoSuggestions
       // topicDetail: function(topicId) {}
     });
     return false;

@@ -334,7 +334,7 @@ img.emoji {
 	height: 260px;
 }
 
-.mck-panel-3.emoji-menu, .mck-panel-3 .emoji-menu  {
+.mck-panel-3.emoji-menu, .mck-panel-3 .emoji-menu {
 	width: calc(100% - 902px);
 	right: 451px !important;
 }
@@ -425,15 +425,12 @@ img.emoji {
 
 .emoji-menu .group-selector a {
 	text-decoration: none;
-	padding: 0px 61.5px;
+	padding: 0; 
 	height: 50px !important;
 	border: none;
 	background-color: transparent;
-}
-
-.mck-panel-3.emoji-menu .group-selector a, 
-.mck-panel-3 .emoji-menu .group-selector a  {
-	padding: 0px 31.4px;
+	width: 20%;
+	text-align: center;
 }
 
 .emoji-menu .group-selector a li div {

@@ -79,7 +79,7 @@ function MckUtils() {
         }
     };
     _this.startsWith = function(matcher, str) {
-        if (str === null)
+        if (str === null || typeof matcher === 'undefined')
             return false;
         var i = str.length;
         if (matcher.length < i)
