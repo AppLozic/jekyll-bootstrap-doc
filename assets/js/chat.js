@@ -54,25 +54,24 @@ $(document).ready(function () {
                contactDisplayName: displayName,
                authenticationTypeId :1,
                onInit: function (response) {
-                   if (typeof callback === 'function') {
-                       scrollToHash();
-                       $applozic.fn.applozic('loadContacts', {"contacts": [{"userId": "applozic", "displayName": "Applozic Support",
-                          "imageLink": "https://www.applozic.com/resources/images/applozic_icon.png"}
-                        ]});
+                 scrollToHash();
+                 $applozic.fn.applozic('loadContacts', {"contacts": [{"userId": "applozic", "displayName": "Applozic Support",
+                    "imageLink": "https://www.applozic.com/resources/images/applozic_icon.png"}
+                  ]});
 
-                        $applozic.fn.applozic('getUserDetail', {callback: function getUserDetail(response) {
-                              if(response.status === 'success') {
-                                  var users = response.data.users.length;
-                                  if (users == 0) {
-                                    //$applozic.fn.applozic('loadTab', 'applozic');
-                                    $applozic.fn.applozic('loadContextualTab', {'userId': 'applozic', 'topicId' : 'android'});
-                                  } else {
-                                    $applozic.fn.applozic('loadTab', '');
-                                  }
-                              }
+                  $applozic.fn.applozic('getUserDetail', {callback: function(response) {
+                        if(response.status === 'success') {
+                            var users = response.data.users.length;
+                            if (users == 0) {
+                              $applozic.fn.applozic('loadTab', 'applozic');
+                              //$applozic.fn.applozic('loadContextualTab', {'userId': 'applozic', 'topicId' : 'android'});
+                            } else {
+                              $applozic.fn.applozic('loadTab', '');
                             }
-                        });
-
+                        }
+                      }
+                  });
+                   if (typeof callback === 'function') {
                        callback(response);
                    }
                },
