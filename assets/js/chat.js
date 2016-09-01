@@ -11,6 +11,26 @@ $(document).ready(function () {
        var $chatLoginModalLink = $("[name='chatLoginModalLink']");
        var userId = (typeof localStorage !== 'undefined') ? localStorage.getItem('mckLoginId') : "";
        var welcomeMessage = "Welcome to Applozic, may I know your name and company name?";
+       var topics = {
+                    'android' :
+                                {'title': 'Android',      // Product title
+                                 'subtitle': 'Documentation',     // Product subTitle or Product Id
+                                 'link' :'',        // Product image link
+                                 'key1':'' ,              // Small text anything like Qty (Optional)
+                                 'value1':'',           // Value of key1 ex-10 (number of quantity) Optional
+                                 'key2': '',              // Small text anything like MRP (product price) (Optional)
+                                 'value2':''            // Value of key2 ex-$100  (Optional)
+                              },
+                    'ios'    :   {'title': 'iOS',      // Product title
+                                   'subtitle': 'Documentation',     // Product subTitle or Product Id
+                                   'link' :'',        // Product image link
+                                   'key1':'' ,              // Small text anything like Qty (Optional)
+                                   'value1':'',           // Value of key1 ex-10 (number of quantity) Optional
+                                   'key2': '',              // Small text anything like MRP (product price) (Optional)
+                                   'value2':''            // Value of key2 ex-$100  (Optional)
+                                }
+                    };
+
        $("#form-chat-login input").on('click', function () {
            $error_chat_login.removeClass('show').addClass('hide');
        });
@@ -44,7 +64,8 @@ $(document).ready(function () {
                               if(response.status === 'success') {
                                   var users = response.data.users.length;
                                   if (users == 0) {
-                                    $applozic.fn.applozic('loadTab', 'applozic');
+                                    //$applozic.fn.applozic('loadTab', 'applozic');
+                                    $applozic.fn.applozic('loadContextualTab', {'userId': 'applozic', 'topicId' : 'android'});
                                   } else {
                                     $applozic.fn.applozic('loadTab', '');
                                   }
@@ -54,8 +75,12 @@ $(document).ready(function () {
 
                        callback(response);
                    }
-               }
-           });
+               },
+               topicBox: true,
+               getTopicDetail: function(topicId) {
+                          return topics[topicId];
+                       }
+              });
        }
        if (userId) {
            $chatLoginModalLink.addClass('hide');
@@ -174,6 +199,7 @@ function getRandomId() {
         text += possible.charAt(Math.floor(Math.random() * possible.length));
     return text;
 }
+
 function displayName(userId) {
     //Todo: replace this with users display users name
     if ("applozic" === userId) {

@@ -261,3 +261,11 @@
     left: -19px;
     position: relative;
 }
+.chat-login-launcher .chat-login-launcher-link {
+    background-color: #11b8bb !important;
+    border: 0 !important;
+}
+
+.chat-login-launcher a {
+  text-decoration: none !important;
+}
