@@ -435,7 +435,7 @@
       starOff : '{{site.github.url}}/assets/raty/images/star-off.png',
       starOn  : '{{site.github.url}}/assets/raty/images/star-on.png',
       click: function(score, evt) {
-        ga('send', 'event', 'Rating', score, 'Docs_{{page.github}}');
+        ga('send', 'event', 'Documentation', 'Rating', 'Docs_{{page.github}}', score);
       }
     });
 
