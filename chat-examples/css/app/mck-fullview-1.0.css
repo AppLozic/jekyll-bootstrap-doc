@@ -111,13 +111,12 @@
 }
 
 .mck-loading {
-	position: absolute;
-	display: table-row;
-	top: 50%;
-	width: 100%;
-	bottom: 0;
-	text-align: center;
-	overflow: auto;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.05);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .mck-show-more-icon {
@@ -582,8 +581,8 @@ a:hover {
 	padding: 0 10px;
 	min-height: 49px;
 	text-align: left;
+	border-bottom: 1px solid #F3F3F3;
 }
-
 .mck-box-top .icon {
 	margin-right: 12px;
 }
@@ -641,7 +640,6 @@ a:hover {
     box-shadow: inset 0 -1px 0 rgba(0,0,0,.07); 
     background-color: #f9f9f9 !important;
     border-bottom: 1px solid #e5e5e5;
-    border-top: 1px solid #e5e5e5;
 }
 
 .mck-sidebox .mck-msg-form {
@@ -705,12 +703,12 @@ a:hover {
 }
 
 .mck-file-expr .mck-box-close {
-	font-size: 14px !important;
+	font-size: 23px !important;
 }
 
 .mck-box-close {
 	float: right;
-	font-size: 16px !important;
+	font-size: 26px !important;
 	font-weight: 700;
 	color: #000;
 	text-shadow: 0 1px 0 #fff;
@@ -1766,8 +1764,8 @@ ol,  ul {
 	display: inline-block;
 }
 
-.mck-message-status.mck-icon-read {
-	opacity: 1;
+.mck-message-status.mck-icon-read, .mck-message-status.mck-icon-sent {
+	opacity: 0.6;
 }
 
 .mck-sidebox-launcher {
@@ -1897,12 +1895,14 @@ ol,  ul {
 }
 
 .mck-loc-box input {
-	width: 460px;
+	width: 470px;
 }
 
 .mck-loc-content {
 	width: 100%;
 	height: 280px;
+	position:relative;
+	overflow:hidden;
 }
 
 .mck-test-center {
@@ -2408,23 +2408,41 @@ ol,  ul {
 	outline: none;
 }
 
+.mck-group-icon-box {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    vertical-align: baseline;
+    outline: none;
+    cursor: pointer;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.mck-group-create-tab .mck-group-icon-box {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+.mck-label {
+    color: #999;
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
 .mck-group-icon-box img {
 	width: 100%;
     height: 100%;
-}
-
-.mck-group-icon-sec .mck-group-icon-box {
-	position: relative;
-	width: 120px;
-	height: 120px;
-	border-radius: 50%;
-	overflow: hidden;
-	margin: 0 auto;
-	vertical-align: baseline;
-	outline: none;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center center;
 }
 
 .mck-group-icon-sec .mck-group-icon {
@@ -2477,27 +2495,29 @@ ol,  ul {
 	border-top-left-radius: 0px;
 }
 
-.mck-group-name-sec div[contenteditable="true"] {
-	height: 32px;
-	line-height:inherit;
-	width: 100%;
-	font-size: 13px;
-	color: #555;
-	outline: none;
-	overflow: auto;
-	overflow-x :hidden;
-	background-color: #fff;
-	border-bottom: 2px solid #009688 !important;
-	background-image: none;
-	border: 0;
-	position: relative;
-	z-index: 2;
-	float: left;
-	margin-bottom: 0;
-	display: table-cell;
-	background-color: #fff;
-	white-space: inherit;
-    text-overflow: inherit;
+.mck-group-name-box div[contenteditable="true"] {
+    height: 32px;
+    line-height:32px;
+    width: 240px;
+    font-size: 15px;
+    color: #555;
+    outline: none;
+    overflow: hidden;
+    background-color: #fff;
+    border-bottom: 2px solid #009688 !important;
+    background-image: none;
+    border: 0;
+    position: relative;
+    z-index: 2;
+    float: left;
+    margin-bottom: 0;
+    display: table-cell;
+    background-color: #fff;
+}
+
+.mck-group-create-tab .mck-group-name-box div[contenteditable="true"] {
+    width: 270px;
+    text-align: left !important;
 }
 
 .mck-box .mck-group-name-sec .mck-req-border {
@@ -2613,7 +2633,51 @@ ol,  ul {
 	border-bottom-left-radius: 4px;
 	border-bottom-right-radius: 4px;
 }
-
+.mck-group-create-tab .mck-group-name-box .blk-lg-12:last-child {
+    width: 279px;
+    padding: 0 5px;
+    background-color: #fff;
+    height: 35px;
+    border-radius: 4px;
+}
+.mck-select {
+    width: 279px;
+    background-color: #fff !important;
+    border: 0;
+    height: 32px;
+    outline: none;
+    display: block;
+    padding: 6px 3px;
+    border-radius: 4px;
+}
+.mck-btn-green {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+.mck-btn-green.active, .mck-btn-green.focus, .mck-btn-green:active, .mck-btn-green:focus, .mck-btn-green:hover {
+    color: #fff;
+    background-color: #449d44;
+    border-color: #398439;
+}
+.mck-loading>img {
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+}
+.mck-group-icon-box .mck-loading {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+.mck-group-icon-box .mck-loading>img {
+    width: 60px;
+    height: 60px;
+}
 .mck-group-admin-text {
 	height: 22px;
 	background: #F0F0F0;
@@ -2633,10 +2697,64 @@ ol,  ul {
 	padding: 10px;
 }
 
-.mck-btn-group-exit {
-	width: 280px;
+.mck-btn-group-exit, .mck-btn-group-create {
+	width: 279px;
 }
 
+.mck-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    background-color: rgba(134, 134, 134, .85);
+    color: rgba(255, 255, 255, .5);
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.mck-overlay-label {
+    width: 100px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.mck-group-create-inner {
+    padding: 10px;
+    overflow: hidden !important;
+}
+.mck-camera-icon {
+    display: block;
+    background-image: url(images/mck-icon-camera.png);
+    background-repeat: no-repeat;
+    margin-top: 10px;
+    height: 20px;
+    width: 20px;
+    vertical-align: middle;
+}
+.mck-group-name-box div[contenteditable="true"].mck-req-border {
+    border-bottom: 2px solid #EB5858 !important;
+}
 .mck-icon-user, .mck-icon-no-image, .mck-icon-loading, .mck-icon-bell,
 	.mck-icon-dollar, .mck-icon-smiley, .mck-icon-sun, .mck-icon-truck,
 	.mck-icon-send, .mck-icon-smiley-blue, .mck-icon-upload,
@@ -2770,8 +2888,8 @@ ol,  ul {
 
 .mck-icon-marker {
 	background-position: -10px -690px;
-	width: 18px;
-	height: 18px;
+	width: 20px;
+	height: 20px;
 	position: relative;
 	vertical-align: middle;
 }

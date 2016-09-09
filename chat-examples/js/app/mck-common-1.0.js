@@ -1,4 +1,8 @@
 var $applozic = jQuery.noConflict(true);
+if ($original) {
+    $ = $original;	 
+    jQuery = $original;
+} 
 var w = window, d = document;
 var MCK_BASE_URL;
 var MCK_CURR_LATITIUDE = 40.7324319;
@@ -87,6 +91,25 @@ function MckUtils() {
         for (--i; (i >= 0) && (matcher[i] === str[i]); --i)
             continue;
         return i < 0;
+    };
+    _this.setEndOfContenteditable = function(contentEditableElement) {
+        var range,selection;
+        if(document.createRange)//Firefox, Chrome, Opera, Safari, IE 9+
+        {
+            range = document.createRange();//Create a range (a range is a like the selection but invisible)
+            range.selectNodeContents(contentEditableElement);//Select the entire contents of the element with the range
+            range.collapse(false);//collapse the range to the end point. false means collapse to end rather than the start
+            selection = window.getSelection();//get the selection object (allows you to change selection)
+            selection.removeAllRanges();//remove any selections already made
+            selection.addRange(range);//make the range you have just created the visible selection
+        }
+        else if(document.selection)//IE 8 and lower
+        { 
+            range = document.body.createTextRange();//Create a range (a range is a like the selection but invisible)
+            range.moveToElementText(contentEditableElement);//Select the entire contents of the element with the range
+            range.collapse(false);//collapse the range to the end point. false means collapse to end rather than the start
+            range.select();//Select the range (make it the visible selection
+        }
     };
 }
 function MckContactUtils() {
@@ -493,9 +516,7 @@ function MckGroupService() {
                         params.callback(response);
                     }
                     if (params.apzCallback) {
-                        params.apzCallback(response, {
-                                groupId: params.groupId, userId: params.userId
-                        })
+                        params.apzCallback(response, params)
                     }
                 }, error: function() {
                     console.log('Unable to process your request. Please reload page.');
@@ -536,7 +557,6 @@ function MckGroupService() {
                         response.status = "success";
                         response.data = data.response;
                     } else {
-                        alert("Unable to process your request. " + data.errorResponse[0].description);
                         response.status = "error";
                         response.errorMessage = data.errorResponse[0].description;
                     }
@@ -544,9 +564,7 @@ function MckGroupService() {
                         params.callback(response);
                     }
                     if (params.apzCallback) {
-                        params.apzCallback(response, {
-                                groupId: params.groupId, userId: params.userId
-                        })
+                        params.apzCallback(response, params)
                     }
                 }, error: function() {
                     console.log('Unable to process your request. Please reload page.');
