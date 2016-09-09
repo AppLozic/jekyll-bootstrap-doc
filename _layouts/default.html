@@ -29,6 +29,7 @@
   <link href="{{site.github.url}}/assets/css/modal.css" rel="stylesheet">
   <link href="https://www.applozic.com/resources/sidebox/css/app/mck-sidebox-1.0.min.css" rel="stylesheet">
 
+
   <link href="https://www.applozic.com/docs/index.html" rel="canonical">
   <style>
     #content {
@@ -56,6 +57,7 @@
   <script src="{{site.github.url}}/assets/js/docs.min.js"></script>
 
   <script src="{{site.github.url}}/assets/js/anchor.min.js"></script>
+  <script src="{{site.github.url}}/assets/raty/jquery.raty.js"></script>
 </head>
 
 <body>
@@ -213,6 +215,7 @@
 			    <section class="bs-docs-section">
 						 <h1 id="overview" class="page-header">Getting Started</h1>
 						<div id="integration-doc"></div>
+            <div class="rate"><h3>Rate documentation and help us improve</h3> <span class="rating"></span></div>
 					</section>
 
 					<section class="bs-docs-section">
@@ -427,6 +430,14 @@
 		});
 
     //$(this).scrollTop(0);
+
+    $('.rating').raty({
+      starOff : '{{site.github.url}}/assets/raty/images/star-off.png',
+      starOn  : '{{site.github.url}}/assets/raty/images/star-on.png',
+      click: function(score, evt) {
+        ga('send', 'event', 'Rating', score, 'Docs_{{page.github}}');
+      }
+    });
 
    });
 
