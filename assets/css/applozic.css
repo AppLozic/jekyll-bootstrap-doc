@@ -303,3 +303,8 @@ table>tbody>tr:nth-of-type(odd) {
   margin-top: 1px;
   margin-bottom: 1px;
 }
+
+.application-key span {
+    margin-right: 10px;
+    font-size: 15px;
+}
