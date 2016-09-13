@@ -24,11 +24,18 @@
 
   <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
   <link href="{{site.github.url}}/assets/css/docs.min.css" rel="stylesheet">
+
+  {% if page.style != null && page.style != "" %}
+    <link rel="stylesheet" href="{{site.github.url}}/assets/highlight/{{page.style}}.css">
+  {% endif %}
+
   <link href="{{site.github.url}}/assets/css/style.css" rel="stylesheet">
   <link href="{{site.github.url}}/assets/css/applozic.css" rel="stylesheet">
   <link href="{{site.github.url}}/assets/css/modal.css" rel="stylesheet">
-  <link href="https://www.applozic.com/resources/sidebox/css/app/mck-sidebox-1.0.min.css" rel="stylesheet">
 
+
+
+  <link href="https://www.applozic.com/resources/sidebox/css/app/mck-sidebox-1.0.min.css" rel="stylesheet">
 
   <link href="https://www.applozic.com/docs/index.html" rel="canonical">
   <style>
@@ -58,6 +65,9 @@
 
   <script src="{{site.github.url}}/assets/js/anchor.min.js"></script>
   <script src="{{site.github.url}}/assets/raty/jquery.raty.js"></script>
+
+  <script src="{{site.github.url}}/assets/highlight/highlight.pack.js"></script>
+
 </head>
 
 <body>
@@ -485,6 +495,7 @@
                    button.className = 'copy-button';
                    button.textContent = 'Copy';
                    pre[i].appendChild(button);
+                   hljs.highlightBlock(pre[i]);
        }
 
        var copyCode = new Clipboard('#' + elemId + ' .copy-button', {

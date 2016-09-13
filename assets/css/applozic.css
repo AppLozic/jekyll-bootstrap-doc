@@ -35,7 +35,7 @@ pre {
   margin-top: 15px;
 	margin-bottom: 15px;
 	position:relative;
-	padding:30px 15px;
+	padding:30px 15px !important;
 	background-color: #f7f7f9;
 	border: 1px solid #e1e1e8;
 }
