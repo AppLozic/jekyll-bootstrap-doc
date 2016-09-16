@@ -229,10 +229,11 @@
 					</section>
 
 					{% if page.isPushNotificationTestEnabled == true %}
-					<section id="device-registraion-testing" class="main-block bg-F9F9F9">
-						<h2>Device Push Notification Testing</h2>
+
+					<section id="push-notification-testing" class="main-block bg-F9F9F9">
+						<h1 id="push-notification-header" class="page-header" >Push Notification Testing</h1>
 						<br/>
-						<div class="container">
+						<div id="push-notification-body" class="container">
 							<div class="row">
 								<div class="col-lg-3 col-md-3 c-darkblack">
 									<span>Application Key : </span> <input id="applicationId" type="text" />
@@ -241,7 +242,7 @@
 									<span>User Id : </span> <input id="userId" type="text" />
 								</div>
 								<div class="col-lg-3 col-md-3 c-darkblack">
-									<input id="testGcmBtn" type="button" value="Submit" />
+									<input id="testGcmBtn" type="button" value="Send Notification" />
 								</div>
 							</div>
 							<br />
