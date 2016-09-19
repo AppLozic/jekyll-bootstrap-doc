@@ -256,7 +256,7 @@
 					<script type="text/javascript" src="https://apps.applozic.com/resources/js/gcmTest.js"></script>
 
 					{% endif %}
-					
+
 					<section class="bs-docs-section">
 						 <h1 id="customization" class="page-header">UI Customization</h1>
 						<div id="customization-doc"></div>
@@ -266,6 +266,15 @@
 						<h1 id="advanced" class="page-header">Advanced</h1>
 						<div id="advanced-doc"></div>
 					</section>
+
+          {% if page.changelog != "" %}
+
+            <section class="bs-docs-section">
+              <h1 id="changelog" class="page-header">Changelog</h1>
+              <div id="changelog-doc">Changelog is available at <a href="{{page.changelog}}">Github</a></div>
+            </section>
+
+          {% endif %}
 
 				{% endif %}
 
