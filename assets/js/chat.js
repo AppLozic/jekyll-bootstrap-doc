@@ -55,6 +55,7 @@ $(document).ready(function () {
                authenticationTypeId :1,
                onInit: function (response) {
                  scrollToHash();
+                 heap.identify(userId);
                  $applozic.fn.applozic('loadContacts', {"contacts": [{"userId": "applozic", "displayName": "Applozic Support",
                     "imageLink": "https://www.applozic.com/resources/images/applozic_icon.png"}
                   ]});
