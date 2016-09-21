@@ -230,24 +230,23 @@
 
 					{% if page.isPushNotificationTestEnabled == true %}
 
-					<section id="push-notification-testing" class="bs-docs-section main-block bg-F9F9F9">
-						<h1 id="push-notification-header" class="page-header" >Push Notification Testing</h1>
-						<br/>
+					<section id="push-notification-testing" class="main-block bg-F9F9F9">
+						<div id="push-notification-header" class="page-header container">
+								<h1>Push Notification Testing</h1>
+						</div>
 						<div id="push-notification-body" class="container">
-							<div class="row">
-								<div class="col-lg-3 col-md-3 c-darkblack">
-									<span>Application Key : </span> <input id="applicationId" type="text" />
+							<div class="row" style="padding: 10px;" >
+								<div class="col-lg-4 col-md-4 c-darkblack">
+									<span>Application Key : </span><input id="applicationId" type="text" />
 								</div>
-								<div class="col-lg-3 col-md-3 c-darkblack">
-									<span>User Id : </span> <input id="userId" type="text" />
+								<div class="col-lg-4 col-md-4 c-darkblack">
+									<span>User Id : </span><input id="userId" type="text" />
 								</div>
-								<div class="col-lg-3 col-md-3 c-darkblack">
-									<input id="testGcmBtn" type="button" value="Send Notification" />
+								<div class="col-lg-4 col-md-4 c-darkblack">
+									<input id="push-notification-test-btn" type="button" value="Submit" />
 								</div>
 							</div>
-							<br />
-							<div class="row result">
-							</div>
+							<div class="row result" style="padding: 10px;" ></div>
 						</div>
 					</section>
 					<script type="text/javascript">
@@ -612,6 +611,7 @@
     </a>
 </div>
 
+
   <!-- Async scripts
   =========================================== -->
   {% if site.header.trianglify %}
@@ -701,14 +701,13 @@
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ur, s);
   })();
 
-  </script>
+</script>
 
-  <script src="//load.sumome.com/" data-sumo-site-id="d4f56ab7b00f3b71fb082d8c3ddf8ff4d4e264c55621760142bf2f41ffc4343a" async="async"></script>
-
+<script src="//load.sumome.com/" data-sumo-site-id="d4f56ab7b00f3b71fb082d8c3ddf8ff4d4e264c55621760142bf2f41ffc4343a" async="async"></script>
   {% endif %}
 
-  <!-- Support Chat -->
   <script src="{{site.github.url}}/assets/js/chat.js"></script>
+  <!-- Support Chat -->
 
 
 </body>

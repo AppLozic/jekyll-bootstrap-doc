@@ -1,13 +1,13 @@
 $(document).ready(function(){
   $('.result').css('display', 'none');
   
-  $('#testGcmBtn').click(function(){
+  $('#push-notification-test-btn').click(function(){
     $('.result').css('display', 'none');
     let applicationId = $('#applicationId').val();
     let userId = $('#userId').val();
     
     $.ajax({
-      url : CONTEXTPATH + "/rest/ws/tools/gcmtest",
+      url : CONTEXTPATH + "/rest/ws/tools/push-notification-test",
       contentType : 'application/json',
       data : {
         userId : userId,
@@ -15,14 +15,23 @@ $(document).ready(function(){
       },
       success : function(data) {
         $('.result').css('display', 'block');
-        let html = '<div class="row"></div>';
+        let html = '';
         if (typeof data === 'string') {
-          html += '<span class="col-md-4">Result: </span><span class="col-md-4">' + data + '</span>'
+          html += '<span class="col-md-2">Result: </span><span class="col-md-4">' + data + '</span>'
         } else if (typeof data === 'object' && data.response && typeof data.response === 'object') {
-          html += '<span class="col-md-6">Registration Id</span><span class="col-md-6">Status</span>';
-          $.each(data.response, (key, val)=>{
-            html += '<span class="col-md-6" style="word-wrap: break-word;" >' + key + '</span><span class="col-md-6" style="word-wrap: break-word;" >' + val + '</span>';
+          html += '<table class="table table-hover table-hover" ><thead><tr><th>Sno</th><th>Device Key</th><th>Registration Id</th><th>Status</th></tr></thead><tboby>';
+          data.response.forEach((row, index)=>{
+            html += '<tr><td>' + (index + 1) +'</td>';
+            row.forEach((val, i)=>{
+              if(i==2){
+                html += '<td style="word-wrap: break-word; text-transform:capitalize;" >' + val + '</td>';
+              }else{
+                html += '<td style="word-wrap: break-word;" >' + val + '</td>';
+              }
+            });
+            html += '</tr>';
           });
+          html += '</tbody></table>';
         }
         $('.result').html(html);
       }
