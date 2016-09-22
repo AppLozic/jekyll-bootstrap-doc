@@ -24,7 +24,7 @@ $(document).ready(function(){
             html += '<tr><td>' + (index + 1) +'</td>';
             row.forEach((val, i)=>{
               if(i==2){
-                html += '<td style="text-transform:capitalize;" >' + val + '</td>';
+                html += '<td style="word-wrap: break-word; text-transform:capitalize;" >' + val + '</td>';
               }else {
                 var text = "";
                 var l=40;
