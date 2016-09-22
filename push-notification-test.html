@@ -1,0 +1,38 @@
+---
+layout: default
+order: 2
+title: Push Notification Testing
+htmlTitle: Push Notification Testing - Applozic
+name: Push Notification Testing
+heading: Push Notification Testing
+description: Documentation for testing push notification for IOS and Android devices.
+version: 2.8
+isHome: true
+# isPushNotificationTestEnabled: false
+style: atom-one-dark
+---
+
+
+<section id="push-notification-testing" class="bs-docs-section main-block bg-F9F9F9">
+	<div id="push-notification-header" class="page-header container">
+		<h1>Push Notification Testing</h1>
+	</div>
+	<div id="push-notification-body" class="container">
+		<div class="row" style="padding: 10px;">
+			<div class="col-lg-4 col-md-4 c-darkblack">
+				<span>Application Key : </span><input id="applicationId" type="text" />
+			</div>
+			<div class="col-lg-4 col-md-4 c-darkblack">
+				<span>User Id : </span><input id="userId" type="text" />
+			</div>
+			<div class="col-lg-4 col-md-4 c-darkblack">
+				<input id="push-notification-test-btn" type="button" value="Submit" />
+			</div>
+		</div>
+		<div class="row result" style="padding: 10px;"></div>
+	</div>
+</section>
+<script type="text/javascript">
+	var CONTEXTPATH = 'https://apps.applozic.com';
+</script>
+<script type="text/javascript" src="{{site.github.url}}/assets/js/push-notification-test.js"></script>
