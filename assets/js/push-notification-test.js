@@ -19,14 +19,21 @@ $(document).ready(function(){
         if (typeof data === 'string') {
           html += '<span class="col-md-2">Result: </span><span class="col-md-4">' + data + '</span>'
         } else if (typeof data === 'object' && data.response && typeof data.response === 'object') {
-          html += '<table class="table table-hover table-hover" ><thead><tr><th>Sno</th><th>Device Key</th><th>Registration Id</th><th>Status</th></tr></thead><tboby>';
+          html += '<table class="table table-hover table-hover" ><thead><tr><th class="col-lg-1" >Sno</th><th class="col-lg-4" >Device Key</th><th class="col-lg-5" >Registration Id</th><th class="col-lg-2" >Status</th></tr></thead><tboby>';
           data.response.forEach((row, index)=>{
             html += '<tr><td>' + (index + 1) +'</td>';
             row.forEach((val, i)=>{
               if(i==2){
-                html += '<td style="word-wrap: break-word; text-transform:capitalize;" >' + val + '</td>';
-              }else{
-                html += '<td style="word-wrap: break-word;" >' + val + '</td>';
+                html += '<td style="text-transform:capitalize;" >' + val + '</td>';
+              }else {
+                var text = "";
+                var l=40;
+                if(val){
+                  for(var i=0; i<val.length; i = i+l){
+                    text += (val.substr(i, l) + " ");
+                  }
+                }
+                html += '<td style="word-wrap: break-word;" >' + text + '</td>';
               }
             });
             html += '</tr>';
