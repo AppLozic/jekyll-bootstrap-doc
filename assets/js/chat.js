@@ -1,4 +1,10 @@
+var userId;
+
 $(document).ready(function () {
+       userId = (typeof localStorage !== 'undefined') ? localStorage.getItem('mckLoginId') : "";
+       if (!userId && $.cookie("mckUserId")) {
+           userId = $.cookie("mckUserId");
+       }
        var $name = $("#userName");
        var $email = $("#email");
        var $guestLogin = $("#guestLogin");
@@ -9,7 +15,6 @@ $(document).ready(function () {
        var $error_chat_login = $("#error-chat-login");
        var $submit_chat_login = $("#submit-chat-login");
        var $chatLoginModalLink = $("[name='chatLoginModalLink']");
-       var userId = (typeof localStorage !== 'undefined') ? localStorage.getItem('mckLoginId') : "";
        var welcomeMessage = "Welcome to Applozic, may I know your name and company name?";
       var topics = {
         'android':
@@ -93,19 +98,6 @@ $(document).ready(function () {
                  $applozic.fn.applozic('loadContacts', {"contacts": [{"userId": "applozic", "displayName": "Applozic Support",
                     "imageLink": "https://www.applozic.com/resources/images/applozic_icon.png"}
                   ]});
-
-                  $applozic.fn.applozic('getUserDetail', {callback: function(response) {
-                        if(response.status === 'success') {
-                            var users = response.data.users.length;
-                            if (users == 0) {
-                              //$applozic.fn.applozic('loadTab', 'applozic');
-                             $applozic.fn.applozic('loadContextualTab', {'userId': 'applozic', 'topicId' : topicId});
-                            } else {
-                              $applozic.fn.applozic('loadTab', '');
-                            }
-                        }
-                      }
-                  });
                    if (typeof callback === 'function') {
                        callback(response);
                    }
@@ -177,6 +169,18 @@ $(document).ready(function () {
                                      $applozic.fn.applozic('addWelcomeMessage', {'sender': 'applozic', 'messageContent': welcomeMessage});
                                    }, "fast");      */
                                  }
+
+                                 $applozic.fn.applozic('getUserDetail', {callback: function(response) {
+                                           var users = response.data.users.length;
+                                           if (users == 0) {
+                                             //$applozic.fn.applozic('loadTab', 'applozic');
+                                             $applozic.fn.applozic('loadContextualTab', {'userId': 'applozic', 'topicId' : topicId});
+                                           } else {
+                                             $applozic.fn.applozic('loadTab', '');
+                                           }
+
+                                     }
+                                 });
                              } else if(response && response.status === 'error' && response.errorMessage === 'INVALID PASSWORD'){
                                window.location = "https://www.applozic.com/views/applozic/page/admin/dashboard.jsp";
                              } else {
@@ -203,8 +207,7 @@ $(document).ready(function () {
            $guestLogin.html('Initiating chat...');
            var firstTimeUser = false;
            if (!userId) {
-               if ($.cookie("mckUserId"))
-               {
+               if ($.cookie("mckUserId")) {
                    userId = $.cookie("mckUserId");
                } else {
                    userId = getRandomId();
@@ -217,6 +220,20 @@ $(document).ready(function () {
                $guestLogin.attr('disabled', false);
                $chatLoginModalLink.addClass('hide');
                $chatLoginModal.modal('hide');
+
+               $applozic.fn.applozic('getUserDetail', {callback: function(response) {
+                     if(response.status === 'success') {
+                         var users = response.data.users.length;
+                         if (users == 0) {
+                           //$applozic.fn.applozic('loadTab', 'applozic');
+                           $applozic.fn.applozic('loadContextualTab', {'userId': 'applozic', 'topicId' : topicId});
+                         } else {
+                           $applozic.fn.applozic('loadTab', '');
+                         }
+                     }
+                   }
+               });
+
                if (firstTimeUser) {
                    /*setTimeout(function() {
                      $applozic.fn.applozic('addWelcomeMessage', {'sender': 'applozic', 'messageContent': welcomeMessage});
