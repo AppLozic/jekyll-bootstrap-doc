@@ -110,7 +110,7 @@ $(document).ready(function () {
                        callback(response);
                    }
                },
-               topicBox: true,
+               topicBox: false,
                getTopicDetail: function(topicId) {
                           return topics[topicId];
                        }
