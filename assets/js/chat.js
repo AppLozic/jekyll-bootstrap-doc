@@ -144,7 +144,7 @@ $(document).ready(function () {
                                    }, "fast");      */
                                  }
                              } else if(response && response.status === 'error' && response.errorMessage === 'INVALID PASSWORD'){
-                               window.location = "${webPluginUrl}/views/applozic/page/admin/dashboard.jsp";
+                               window.location = "https://www.applozic.com/views/applozic/page/admin/dashboard.jsp";
                              } else {
                                if(response && response.errorMessage){
                                  alert(response.errorMessage);
