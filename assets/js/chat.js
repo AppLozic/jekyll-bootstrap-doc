@@ -11,25 +11,59 @@ $(document).ready(function () {
        var $chatLoginModalLink = $("[name='chatLoginModalLink']");
        var userId = (typeof localStorage !== 'undefined') ? localStorage.getItem('mckLoginId') : "";
        var welcomeMessage = "Welcome to Applozic, may I know your name and company name?";
-       var topics = {
-                    'android' :
-                                {'title': 'Android',      // Product title
-                                 'subtitle': 'Documentation',     // Product subTitle or Product Id
-                                 'link' :'',        // Product image link
-                                 'key1':'' ,              // Small text anything like Qty (Optional)
-                                 'value1':'',           // Value of key1 ex-10 (number of quantity) Optional
-                                 'key2': '',              // Small text anything like MRP (product price) (Optional)
-                                 'value2':''            // Value of key2 ex-$100  (Optional)
-                              },
-                    'ios'    :   {'title': 'iOS',      // Product title
-                                   'subtitle': 'Documentation',     // Product subTitle or Product Id
-                                   'link' :'',        // Product image link
-                                   'key1':'' ,              // Small text anything like Qty (Optional)
-                                   'value1':'',           // Value of key1 ex-10 (number of quantity) Optional
-                                   'key2': '',              // Small text anything like MRP (product price) (Optional)
-                                   'value2':''            // Value of key2 ex-$100  (Optional)
-                                }
-                    };
+      var topics = {
+        'android':
+                {'title': 'Android', // Product title
+                    'subtitle': 'Documentation', // Product subTitle or Product Id
+                    'link': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Android_robot.svg/2000px-Android_robot.svg.png', // Product image link
+                    'key1': '', // Small text anything like Qty (Optional)
+                    'value1': '', // Value of key1 ex-10 (number of quantity) Optional
+                    'key2': '', // Small text anything like MRP (product price) (Optional)
+                    'value2': ''            // Value of key2 ex-$100  (Optional)
+                },
+        'ios': {'title': 'iOS', // Product title
+            'subtitle': 'Documentation', // Product subTitle or Product Id
+            'link': 'https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png?201609170856', // Product image link
+            'key1': '', // Small text anything like Qty (Optional)
+            'value1': '', // Value of key1 ex-10 (number of quantity) Optional
+            'key2': '', // Small text anything like MRP (product price) (Optional)
+            'value2': ''            // Value of key2 ex-$100  (Optional)
+        },
+        'web': {'title': 'WEB', // Product title
+            'subtitle': 'Documentation', // Product subTitle or Product Id
+            'link': 'http://www.playgroundrecording.com/wp-content/uploads/2013/01/logo-web-300x300.png', // Product image link
+            'key1': '', // Small text anything like Qty (Optional)
+            'value1': '', // Value of key1 ex-10 (number of quantity) Optional
+            'key2': '', // Small text anything like MRP (product price) (Optional)
+            'value2': ''            // Value of key2 ex-$100  (Optional)
+        }
+        ,
+        'phonegap': {'title': 'PHONEGAP', // Product title
+            'subtitle': 'Documentation', // Product subTitle or Product Id
+            'link': 'http://phonegap.com/uploads/artwork/PhoneGap-Symbol-Black.png', // Product image link
+            'key1': '', // Small text anything like Qty (Optional)
+            'value1': '', // Value of key1 ex-10 (number of quantity) Optional
+            'key2': '', // Small text anything like MRP (product price) (Optional)
+            'value2': ''            // Value of key2 ex-$100  (Optional)
+        }
+        ,
+        'ionic': {'title': 'IONIC', // Product title
+            'subtitle': 'Documentation', // Product subTitle or Product Id
+            'link': 'http://ecodile.com/wp-content/uploads/2015/10/ionic-150x150.png', // Product image link
+            'key1': '', // Small text anything like Qty (Optional)
+            'value1': '', // Value of key1 ex-10 (number of quantity) Optional
+            'key2': '', // Small text anything like MRP (product price) (Optional)
+            'value2': ''            // Value of key2 ex-$100  (Optional)
+        },
+        'platform': {'title': 'PLATFORM', // Product title
+            'subtitle': 'Documentation', // Product subTitle or Product Id
+            'link': 'https://www.ofx.com/-/media/Images/Modules/ML006%20-%203%20Column%20Image%20List/Partner%20with%20us/Plug%20Into%20Our%20Platform/Icon_25.ashx?h=300&w=300&la=en-AU&hash=1975C201A1D17F7E94808F624ADC1E5095B7727C', // Product image link
+            'key1': '', // Small text anything like Qty (Optional)
+            'value1': '', // Value of key1 ex-10 (number of quantity) Optional
+            'key2': '', // Small text anything like MRP (product price) (Optional)
+            'value2': ''            // Value of key2 ex-$100  (Optional)
+        }
+    };
 
        $("#form-chat-login input").on('click', function () {
            $error_chat_login.removeClass('show').addClass('hide');
@@ -64,8 +98,8 @@ $(document).ready(function () {
                         if(response.status === 'success') {
                             var users = response.data.users.length;
                             if (users == 0) {
-                              $applozic.fn.applozic('loadTab', 'applozic');
-                              //$applozic.fn.applozic('loadContextualTab', {'userId': 'applozic', 'topicId' : 'android'});
+                              //$applozic.fn.applozic('loadTab', 'applozic');
+                             $applozic.fn.applozic('loadContextualTab', {'userId': 'applozic', 'topicId' : topicId});
                             } else {
                               $applozic.fn.applozic('loadTab', '');
                             }
