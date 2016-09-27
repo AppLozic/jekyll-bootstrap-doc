@@ -114,7 +114,25 @@ $(document).ready(function () {
     }
     if (userId) {
         $chatLoginModalLink.addClass('hide');
-        initPlugin(userId);
+        initPlugin(userId, function() {
+          $applozic.fn.applozic('getUserDetail', {callback: function (response) {
+                  if (response.status === 'success') {
+                      var users = response.data.users.length;
+                      if (users == 0) {
+                          if (topicId) {
+                              $applozic("#mck-sidebox-launcher .applozic-launcher").data('mck-id', "applozic").data('mck-topicid', topicId).addClass('applozic-wt-launcher').removeClass('applozic-launcher');
+                              //$applozic.fn.applozic('loadContextualTab', {'userId': 'applozic', 'topicId': topicId});
+                          } else {
+                              $applozic("#mck-sidebox-launcher .applozic-launcher").data('mck-id', "applozic");
+                              //$applozic.fn.applozic('loadTab', 'applozic');
+                          }
+                      } else {
+                          //$applozic.fn.applozic('loadTab', '');
+                      }
+                  }
+              }
+          });
+        });
     }
 
     $chatLoginModalLink.click(function (e) {
@@ -174,21 +192,7 @@ $(document).ready(function () {
                                      }, "fast");      */
                                 }
 
-                                $applozic.fn.applozic('getUserDetail', {callback: function (response) {
-                                        if (response.status === 'success') {
-                                            var users = response.data.users.length;
-                                            if (users == 0) {
-                                                if (topicId) {
-                                                    $applozic.fn.applozic('loadContextualTab', {'userId': 'applozic', 'topicId': topicId});
-                                                } else {
-                                                    $applozic.fn.applozic('loadTab', 'applozic');
-                                                }
-                                            } else {
-                                                $applozic.fn.applozic('loadTab', '');
-                                            }
-                                        }
-                                    }
-                                });
+                                processUserDetails();
                             } else if (response && response.status === 'error' && response.errorMessage === 'INVALID PASSWORD') {
                                 window.location = "https://www.applozic.com/views/applozic/page/admin/dashboard.jsp";
                             } else {
@@ -229,21 +233,7 @@ $(document).ready(function () {
             $chatLoginModalLink.addClass('hide');
             $chatLoginModal.modal('hide');
 
-            $applozic.fn.applozic('getUserDetail', {callback: function (response) {
-                    if (response.status === 'success') {
-                        var users = response.data.users.length;
-                        if (users == 0) {
-                            if (topicId) {
-                                $applozic.fn.applozic('loadContextualTab', {'userId': 'applozic', 'topicId': topicId});
-                            } else {
-                                $applozic.fn.applozic('loadTab', 'applozic');
-                            }
-                        } else {
-                            $applozic.fn.applozic('loadTab', '');
-                        }
-                    }
-                }
-            });
+            processUserDetails();
 
             if (firstTimeUser) {
                 /*setTimeout(function() {
@@ -253,6 +243,24 @@ $(document).ready(function () {
         });
     });
 });
+
+function processUserDetails() {
+  $applozic.fn.applozic('getUserDetail', {callback: function (response) {
+          if (response.status === 'success') {
+              var users = response.data.users.length;
+              if (users == 0) {
+                  if (topicId) {
+                      $applozic.fn.applozic('loadContextualTab', {'userId': 'applozic', 'topicId': topicId});
+                  } else {
+                      $applozic.fn.applozic('loadTab', 'applozic');
+                  }
+              } else {
+                  $applozic.fn.applozic('loadTab', '');
+              }
+          }
+      }
+  });
+}
 
 function getRandomId() {
     var text = "";
