@@ -216,7 +216,7 @@ function initAutoSuggestions() {
 
 
 function displayUserDetails(tabId) {
-  if (!welcome[tabId].site) {
+  if (!welcome[tabId] || !welcome[tabId].site) {
     return;
   }
   $applozic("#mck-tab-individual .mck-tab-title").append("<a href='" + welcome[tabId].site + "' target='_blank'>" + welcome[tabId].site + "</a>");
