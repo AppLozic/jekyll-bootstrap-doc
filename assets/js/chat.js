@@ -120,10 +120,10 @@ $(document).ready(function () {
                       var users = response.data.users.length;
                       if (users == 0) {
                           if (topicId) {
-                              $applozic("#mck-sidebox-launcher .applozic-launcher").data('mck-id', "applozic").data('mck-topicid', topicId).addClass('applozic-wt-launcher').removeClass('applozic-launcher');
+                              $applozic(".applozic-launcher").data('mck-id', "applozic").data('mck-topicid', topicId).addClass('applozic-wt-launcher').removeClass('applozic-launcher');
                               //$applozic.fn.applozic('loadContextualTab', {'userId': 'applozic', 'topicId': topicId});
                           } else {
-                              $applozic("#mck-sidebox-launcher .applozic-launcher").data('mck-id', "applozic");
+                              $applozic(".applozic-launcher").data('mck-id', "applozic");
                               //$applozic.fn.applozic('loadTab', 'applozic');
                           }
                       } else {
