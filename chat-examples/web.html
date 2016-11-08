@@ -9,8 +9,9 @@
 	<link href="node_modules/applozic-chat/src/autosuggest/css/jquery.atwho.min.css" rel="stylesheet">
 
 	<link href="node_modules/applozic-chat/src/css/app/fullview/applozic.fullview.css" rel="stylesheet">
-
+<!--
 	<link rel="stylesheet" href="css/style.css">
+-->
 	<style>
 		#chat {
 		  min-height: 100%;
@@ -528,7 +529,7 @@
 				<div class="mck-box-content">
 					<div class="mck-box-top mck-row">
 						<div class="blk-lg-10">
-							<h4 class="mck-box-title" title="Start New">Start New</h4>
+							<h4 class="mck-box-title" title="New Chat">New Chat</h4>
 						</div>
 						<div class="blk-lg-2">
 							<button type="button" class="mck-box-close" data-dismiss="mckbox"
@@ -537,22 +538,50 @@
 							</button>
 						</div>
 					</div>
+					<div id="mck-search-tab-box" class="mck-search-tab-box mck-row">
+						<div class="blk-lg-12">
+							<ul class="mck-nav mck-nav-panel">
+								<li class="mck-nav-item mck-nav-divider"><a
+									id="mck-contact-search-tab"
+									class="mck-nav-link mck-contact-search active" href="#"><strong>Contacts</strong></a></li>
+								<li class="mck-nav-item"><a id="mck-group-search-tab"
+									class="mck-nav-link mck-group-search" href="#"><strong>Groups</strong></a>
+								</li>
+							</ul>
+						</div>
+					</div>
 					<div class="mck-box-body">
 						<div class="mck-form-group">
-							<div class="mck-input-group blk-lg-12">
-								<input id="mck-contact-search" type="text"
+							<div id="mck-contact-search-input-box"
+								class="mck-input-group blk-lg-12">
+								<input id="mck-contact-search-input" type="text"
 									data-provide="typeahead" placeholder="Search..." autofocus /> <span
 									class="mck-search-icon"><a href="#" role="link"
 									class="mck-contact-search-link"><span
 										class="mck-icon-search"></span></a></span>
+							</div>
+							<div id="mck-group-search-input-box"
+								class="mck-input-group blk-lg-12 n-vis">
+								<input id="mck-group-search-input" type="text"
+									data-provide="typeahead" placeholder="Search..." autofocus /> <span
+									class="mck-search-icon"><a href="#" role="link"
+									class="mck-group-search-link"><span class="mck-icon-search"></span></a></span>
 							</div>
 						</div>
 						<div class="mck-tab-cell">
 							<div class="mck-message-inner">
 								<ul id="mck-contact-search-list"
 									class="mck-contact-list mck-contact-search-list mck-nav mck-nav-tabs mck-nav-stacked"></ul>
+								<ul id="mck-group-search-list"
+									class="mck-contact-list mck-group-search-list mck-nav mck-nav-tabs mck-nav-stacked n-vis"></ul>
 								<div id="mck-no-search-contacts" class="mck-show-more-icon n-vis">
 									<h3>No contacts yet!</h3>
+								</div>
+								<div id="mck-no-search-groups" class="mck-show-more-icon n-vis">
+									<h3>No groups yet!</h3>
+								</div>
+								<div id="mck-search-loading" class="mck-loading n-vis">
+									<img src="node_modules/applozic-chat/src/images/ring.gif">
 								</div>
 							</div>
 						</div>
@@ -582,15 +611,16 @@
 					<div class="mck-box-body">
 						<div class="mck-form-group">
 							<div class="mck-input-group blk-lg-12">
-								<input id="mck-group-search" type="text" data-provide="typeahead"
-									placeholder="Search..." autofocus /> <span
+								<input id="mck-group-member-search" type="text"
+									data-provide="typeahead" placeholder="Search..." autofocus /> <span
 									class="mck-search-icon"><a href="#" role="link"
-									class="mck-group-tab-search"><span class="mck-icon-search"></span></a></span>
+									class="mck-group-member-search-link"><span
+										class="mck-icon-search"></span></a></span>
 							</div>
 						</div>
 						<div class="mck-tab-cell">
 							<div class="mck-message-inner">
-								<ul id="mck-group-search-list"
+								<ul id="mck-group-member-search-list"
 									class=" mck-contact-list mck-group-search-list mck-nav mck-nav-tabs mck-nav-stacked"></ul>
 								<div id="mck-no-gsm-text"
 									class="mck-no-data-text mck-text-muted n-vis">No Users!</div>
@@ -600,6 +630,7 @@
 				</div>
 			</div>
 		</div>
+	</div>
 
 	</div>
 
