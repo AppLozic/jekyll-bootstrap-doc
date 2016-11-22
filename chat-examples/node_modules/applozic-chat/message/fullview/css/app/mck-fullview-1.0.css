@@ -1481,6 +1481,7 @@ ol, ul {
 	white-space: pre-wrap;
 	word-wrap: break-word;
 	position: relative;
+	max-width:350px;
 }
 
 .mck-msg-content img {
@@ -1630,6 +1631,7 @@ ol, ul {
 	white-space: pre-wrap;
 	word-wrap: break-word;
 	word-break: break-all;
+	max-width : 350px;
 }
 
 .mck-msg-box .mck-attachment img:hover {
@@ -2952,6 +2954,13 @@ ol, ul {
 	height: 40px;
 	overflow: hidden;
 	outline: none;
+}
+.mck-video-player {
+	overflow: hidden;
+    outline: none;
+    transform-origin: left top;
+    z-index: 2;
+    width: 100%;
 }
 
 .mck-group-name-box div[contenteditable="true"].mck-req-border {
