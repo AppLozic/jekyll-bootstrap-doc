@@ -41,7 +41,6 @@ $(document).ready(function() {
         // write your logic exectute after plugin initialize.
         $('#chat').css('display', 'none');
         $('#chat-box-div').css('display', 'block');
-        $applozic.fn.applozic('loadTab', '');
         initAutoSuggestions();
       }
     }
