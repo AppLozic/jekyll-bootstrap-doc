@@ -13,7 +13,7 @@ Modified version of http://mistic100.github.io/jekyll-bootstrap-doc by [Applozic
 5. Custom page ordering.
 
 
-```xml
+```
   <string name="default_media_location_folder">YOUR_APP_NAME</string> 		  
   <string name="default_media_location_folder">YOUR_APP_NAME</string> 
   ```	
