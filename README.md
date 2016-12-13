@@ -11,3 +11,11 @@ Modified version of http://mistic100.github.io/jekyll-bootstrap-doc by [Applozic
 3. Support for hyperlinks.
 4. Support Chat
 5. Custom page ordering.
+
+
+```java
+  if(MobiComPushReceiver.isMobiComPushNotification(data)) {            		  if(MobiComPushReceiver.isMobiComPushNotification(data)) {            
+          MobiComPushReceiver.processMessageAsync(this, data);               		          MobiComPushReceiver.processMessageAsync(this, data);               
+          return;          		          return;  
+          
+```
