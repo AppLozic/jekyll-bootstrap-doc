@@ -11,9 +11,3 @@ Modified version of http://mistic100.github.io/jekyll-bootstrap-doc by [Applozic
 3. Support for hyperlinks.
 4. Support Chat
 5. Custom page ordering.
-
-
-```
-  <string name="default_media_location_folder">YOUR_APP_NAME</string> 		  
-  <string name="default_media_location_folder">YOUR_APP_NAME</string> 
-  ```	
